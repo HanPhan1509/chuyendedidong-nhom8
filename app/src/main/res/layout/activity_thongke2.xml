@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_thongke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Thống kê"></androidx.appcompat.widget.Toolbar>
+    <EditText
+        android:id="@+id/edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnNam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Năm" />
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bieudo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.github.mikephil.charting.charts.BarChart>
+</LinearLayout>

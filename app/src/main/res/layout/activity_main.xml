@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_form"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarmanhinh"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="30dp">
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#59FFFFFF"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nen2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/srach"
+                    android:layout_width="35dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_search_black_24dp"
+                    app:backgroundTint="#00F44336" />
+
+                <TextView
+                    android:id="@+id/tvsreach"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn cần mua gì ?">
+
+                </TextView>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/giohang"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/giohang"
+                app:backgroundTint="#FFFFFF" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="#FAEFEFEB"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="92dp"
+                                android:background="@drawable/bg_form"></ImageView>
+
+                            <androidx.viewpager.widget.ViewPager
+                                android:id="@+id/vp_slide_photo"
+                                android:layout_width="match_parent"
+                                android:layout_height="158dp">
+
+                            </androidx.viewpager.widget.ViewPager>
+
+                            <me.relex.circleindicator.CircleIndicator
+                                android:id="@+id/circle_indicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="15dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_below="@+id/vp_slide_photo"
+                                android:layout_centerInParent="true"></me.relex.circleindicator.CircleIndicator>
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botron"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="83dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="#00000000"
+                                    android:text="Sale off"
+                                    android:textColor="#000000"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignEnd="@+id/xemthem"
+                                    android:layout_alignRight="@+id/xemthem"
+                                    android:layout_marginEnd="220dp"
+                                    android:layout_marginRight="220dp"
+                                    android:background="@drawable/salelogo" />
+
+                                <Button
+                                    android:id="@+id/xemthem"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="100dp"
+                                    android:layout_marginEnd="11dp"
+                                    android:layout_marginRight="11dp"
+                                    android:background="#00000000"
+                                    android:text="Xem Thêm >>"
+                                    android:textColor="#C803A9F4"
+                                    android:textSize="10dp">
+
+                                </Button>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+
+                                android:layout_width="396dp"
+
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/review"
+
+                                    android:layout_width="372dp"
+                                    android:layout_height="165dp">
+
+                                </androidx.recyclerview.widget.RecyclerView>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="396dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/botron"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+
+                                android:background="#00000000"
+                                android:text=" Cây cảnh"
+                                android:textColor="#000000"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rcv_product"
+                                    android:layout_width="372dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginEnd="13dp"
+                                    android:layout_marginRight="13dp">
+
+                                </androidx.recyclerview.widget.RecyclerView>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </FrameLayout>
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+

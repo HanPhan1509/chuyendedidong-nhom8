@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="248dp"
+                    android:gravity="center"
+
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="416dp"
+        android:layout_height="272dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/anh_logo" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="252dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="Thông tin:"
+                            android:textColor="#FF1717"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_column="0"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:text="Tên cây:"
+                                android:textColor="#FF1744"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/tensp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:text=""
+                                android:textColor="#000000" />
+                        </TableRow>
+
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="26dp"
+                                android:layout_column="0"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:text="Đã sale:"
+                                android:textColor="#FF1744"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/ctsale"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginLeft="22dp"
+                                android:textSize="15dp"
+                                android:textColor="#000000"
+                                android:text=""
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </TableRow>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_column="0"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:text="Gía thành:"
+                                android:textColor="#FF1744"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/giathanh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:text=""
+                                android:textColor="#000000" />
+                        </TableRow>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+
+                            android:layout_marginTop="6dp"
+                            android:text="Số lượng:"
+                            android:textColor="#FF1744"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TableRow
+                            android:layout_width="150dp"
+                            android:layout_height="38dp">
+
+
+                            <Button
+                                android:id="@+id/butongiam"
+                                android:layout_width="33dp"
+                                android:layout_height="22dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                android:background="#FFFFFF"
+                                android:focusable="false"
+                                android:text="-"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <EditText
+
+                                android:id="@+id/edtgiatri"
+                                android:layout_width="46dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="#F3EDED"
+                                android:gravity="center"
+                                android:text="1"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/butontang"
+                                android:layout_width="33dp"
+                                android:layout_height="23dp"
+                                android:layout_gravity="center"
+                                android:background="#FFFFFF"
+                                android:focusable="false"
+                                android:text="+"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="413dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginTop="6dp"
+                        android:background="#6F8BC34A"
+                        android:gravity="center"
+                        android:text="Thông tin chi tiết:"
+                        android:textColor="#FF1744"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/dacdiem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Giới thiệu, đặc diêm..."
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#000000"
+                        android:textSize="16dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <ImageButton
+            android:id="@+id/addgiohang"
+            android:layout_width="238dp"
+            android:layout_height="match_parent"
+            android:background="#4CAF50"
+            android:src="@drawable/giohang">
+
+        </ImageButton>
+
+        <Button
+            android:id="@+id/muangay"
+            android:layout_width="177dp"
+            android:layout_height="match_parent"
+            android:background="#FF5722"
+
+            android:text="Mua ngay"
+            android:textColor="#FFFFFF"></Button>
+    </LinearLayout>
+</LinearLayout>
+

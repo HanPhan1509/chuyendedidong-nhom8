@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="4dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="405dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_width="109dp"
+                        android:layout_height="89dp"
+                        android:layout_marginBottom="5dp">
+
+                        <ImageView
+                            android:id="@+id/trangthai"
+                            android:layout_width="97dp"
+                            android:layout_height="89dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/ic_developer_board_black_24dp"></ImageView>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="111dp"
+                                android:layout_height="wrap_content"
+                                android:text="Mã đơn hàng : "
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvxnmadonhang"
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:text=" "
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                 />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/tvxntenkh"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+
+                                android:text="Tên khách hàng"
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                />
+                        </TableRow>
+
+
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/ttvdiachi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Phụng Công Văn Giang Hưng Yên"
+                                android:textColor="#000000"
+                                android:textSize="18dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="86dp"
+                                android:layout_height="wrap_content"
+
+                                android:text="Tổng tiền :"
+                                android:textColor="#FF0000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvxntongtien"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+
+                                android:text=""
+                                android:textColor="#FF0000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="Trạng thái :"
+                                android:textColor="#03A9F4"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvxntrangthai"
+                                android:layout_width="142dp"
+                                android:layout_height="wrap_content"
+
+                                android:text="Tổng tiền"
+                                android:textColor="#03A9F4"
+                                android:textSize="15dp"
+                              />
+
+                            <Button
+                                android:id="@+id/btnsend"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:background="#FF5722"
+                                android:text=">>"
+                                android:textColor="#fff" />
+                        </TableRow>
+
+                        <Spinner
+                            android:id="@+id/spntt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:background="@drawable/nen3" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnxoa"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="#FF9800"
+                    android:layout_marginBottom="5dp"
+                    android:text="Xóa" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
