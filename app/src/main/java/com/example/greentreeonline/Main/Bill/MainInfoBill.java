@@ -224,6 +224,7 @@ public class MainInfoBill extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> pra = new HashMap<>();
                 int id = sharedPreferences1.getInt("madonhang", 0);
+                Log.d(String.valueOf(id), "aaaaaaaaa");
                 pra.put("idhd", String.valueOf(id));
                 return pra;
             }

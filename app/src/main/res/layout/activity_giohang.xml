@@ -12,7 +12,6 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:background="#FFFFFF"
-        app:navigationIcon="@drawable/ic_detail_back"
         app:title="Giỏ hàng của tôi"
         app:titleTextColor="#000000">
 

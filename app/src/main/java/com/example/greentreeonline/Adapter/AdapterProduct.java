@@ -2,6 +2,7 @@ package com.example.greentreeonline.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,9 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         holder.tvTen.setText(sp.getTensp());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.tvGia.setText("Giá: " + decimalFormat.format(sp.getGt()) + " VNĐ");
-        Picasso.get().load(sp.getImgsp()).centerCrop().resize(150, 150).into(holder.imvHinh);
+         Picasso.get().load(sp.getImgsp()).centerCrop().resize(150, 150).into(holder.imvHinh);
+        Log.d(sp.getImgsp(), "  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: ");
+
     }
 
 

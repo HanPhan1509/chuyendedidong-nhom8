@@ -70,7 +70,7 @@ public class AdapterStatusBill extends BaseAdapter {
         private ImageView imgtvhinhanh;
 
         private TextView tvmadh, tvtenkh, tvtensp, tvgia, tvngaymua, tvtrangthai;
-        private Button btsend, btxoadh;
+        private TextView btsend, btxoadh;
         private Spinner spntt;
 
 //        private EditText edttrangthai;

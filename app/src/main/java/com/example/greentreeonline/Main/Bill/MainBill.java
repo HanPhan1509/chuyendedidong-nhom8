@@ -42,8 +42,8 @@ public class MainBill extends AppCompatActivity {
     String urldh = ConnectServer.donhang;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-    private SharedPreferences sharedPreferences1;
-    private SharedPreferences.Editor editor1;
+    public static SharedPreferences sharedPreferences1;
+    public static SharedPreferences.Editor editor1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

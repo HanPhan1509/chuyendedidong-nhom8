@@ -3,8 +3,11 @@ package com.example.greentreeonline.Main.Login;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -42,7 +45,7 @@ public class MainLogin extends AppCompatActivity {
     private EditText edtmk;
     private EditText edtEmail;
     private TextView dangky;
-    private Button btnLogin;
+    private TextView btnLogin;
     private ProgressDialog pDialog;
     Toolbar toolbar;
     String tentaikhoan;
@@ -62,6 +65,10 @@ public class MainLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_dangnhap);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
         EventBus.getDefault().register(this);
 
 
@@ -84,7 +91,7 @@ public class MainLogin extends AppCompatActivity {
     private void addControl() {
         edttk = (EditText) findViewById(R.id.txttaikhoan);
         edtmk = (EditText) findViewById(R.id.txtmatkhau);
-        btnLogin = (Button) findViewById(R.id.btn_dangnhap);
+        btnLogin =  findViewById(R.id.btn_dangnhap);
         dangky =  findViewById(R.id.TxtRegister);
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Đang đăng nhập...");

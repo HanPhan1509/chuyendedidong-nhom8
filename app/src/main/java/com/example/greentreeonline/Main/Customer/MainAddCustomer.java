@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -51,7 +51,7 @@ public class MainAddCustomer extends AppCompatActivity {
     }
 
     public void event() {
-        Toolbar bar = (Toolbar) findViewById(R.id.tbaddkh);
+        Toolbar bar = findViewById(R.id.tbaddkh);
         bar.setTitle("Hủy bỏ");
         bar.setOnClickListener(new View.OnClickListener() {
             @Override

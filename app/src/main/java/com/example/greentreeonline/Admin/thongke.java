@@ -1,5 +1,12 @@
 package com.example.greentreeonline.Admin;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.toolbox.StringRequest;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,26 +15,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.greentreeonline.ConnectServer.ConnectServer;
 import com.example.greentreeonline.R;
+import com.example.greentreeonline.ConnectServer.ConnectServer;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,7 +39,7 @@ import java.util.Map;
 
 public class thongke extends AppCompatActivity {
     ArrayList<objthongke> mang;
-    ArrayList<objthongke> mang1;
+    ArrayList<objthongke>mang1;
     BarChart barChart;
     Toolbar toolbar;
     Button btnnam;
@@ -49,7 +50,6 @@ public class thongke extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thongke2);
-
         anhxa();
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -108,8 +108,8 @@ public class thongke extends AppCompatActivity {
                         int tongtien1 = mang.get(0).getTongtien();
                         int thang2 = Integer.parseInt(mang.get(1).getThoigian());
                         int tongtien2 = mang.get(1).getTongtien();
-                        int thang3 = Integer.parseInt(mang.get(2).getThoigian());
-                        int tongtien3 = mang.get(2).getTongtien();
+//                        int thang3 = Integer.parseInt(mang.get(2).getThoigian());
+                       // int tongtien3 = mang.get(2).getTongtien();
                         int thang4 = 0;
                         int tongtien4 = 0;
                         int thang5 = 0;
@@ -143,7 +143,7 @@ public class thongke extends AppCompatActivity {
 
                         v.add(new BarEntry(thang1, tongtien1));
                         v.add(new BarEntry(thang2, tongtien2));
-                        v.add(new BarEntry(thang3, tongtien3));
+                      //  v.add(new BarEntry(thang3, tongtien3));
                         v.add(new BarEntry(thang4, tongtien4));
                         v.add(new BarEntry(thang5, tongtien5));
                         v.add(new BarEntry(thang6, tongtien6));

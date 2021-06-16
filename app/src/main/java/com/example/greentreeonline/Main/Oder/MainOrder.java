@@ -12,9 +12,9 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -74,8 +74,8 @@ public class MainOrder extends AppCompatActivity {
         setContentView(R.layout.activity_thanhtoan);
         sharedPreferences = this.getSharedPreferences("luutaikhoan", this.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        toolbartt = (Toolbar) findViewById(R.id.toolBarthanhtoan);
-        toolbartt.setNavigationIcon(R.drawable.back);
+        toolbartt = findViewById(R.id.toolBarthanhtoan);
+       // toolbartt.setNavigationIcon(R.drawable.back);
         toolbartt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

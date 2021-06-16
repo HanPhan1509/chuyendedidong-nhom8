@@ -5,16 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg_form"
     tools:context=".Fragment.FragmentFavourite">
-<Toolbar
-    android:layout_width="match_parent"
-    android:title="Danh Sách Yêu Thích"
-    android:background="#F44336"
-    android:titleTextColor="#FFFFFF"
-    android:layout_height="wrap_content"
-    ></Toolbar>
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_toolbar"
+        android:title="Danh Sách Yêu Thích"
+        android:titleTextColor="#FFFFFF"></Toolbar>
+
     <ListView
         android:id="@+id/lvyt"
+        android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 </LinearLayout>

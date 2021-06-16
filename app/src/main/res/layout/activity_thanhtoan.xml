@@ -13,9 +13,10 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         android:background="#FFFFFF"
-        app:navigationIcon="@drawable/ic_detail_back"
         app:title="Thanh Toán"
-        app:titleTextColor="#000000"></androidx.appcompat.widget.Toolbar>
+        app:titleTextColor="#000000">
+
+    </androidx.appcompat.widget.Toolbar>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_marginTop="5dp"

@@ -277,7 +277,7 @@ public class FragmentHome extends Fragment {
 
     public void timkiem() {
         tvsreach.setOnClickListener(new View.OnClickListener() {
-            @Override
+               @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MainSearch.class);
                 startActivity(intent);
@@ -380,7 +380,7 @@ public class FragmentHome extends Fragment {
                 }
 
                 adapcay.notifyDataSetChanged();
-                Toast.makeText(getContext().getApplicationContext(), "" + ssale.size(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext().getApplicationContext(), "" + ssale.size(), Toast.LENGTH_SHORT).show();
             }
 
         },
