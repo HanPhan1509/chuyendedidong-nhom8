@@ -133,6 +133,9 @@ public class MainOrder extends AppCompatActivity {
 
         // DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         gia.setText(tongTien + 30000 + " VND");
+        Log.d("tamtinh: ", String.valueOf(tamtinh));
+
+        Log.d("giatien: ", String.valueOf(tongTien+30000+ ""));
 
         //}
     }
@@ -210,13 +213,11 @@ public class MainOrder extends AppCompatActivity {
         final String phiship1 = phiship.getText().toString().trim();
         final String tamtinh1 = tamtinh.getText().toString().trim();
         final String tien = gia.getText().toString().trim();
-
         if (ten1.isEmpty() || sdt1.isEmpty() || diachi.isEmpty()) {
             Toast.makeText(this, "Bạn chưa nhập đủ dữ liệu!", Toast.LENGTH_SHORT).show();
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
         builder.setMessage("Xác nhận thanh toán ");
         builder.setPositiveButton("có", new DialogInterface.OnClickListener() {
             @Override
@@ -231,7 +232,6 @@ public class MainOrder extends AppCompatActivity {
                             StringRequest stringRequest = new StringRequest(Request.Method.POST, urlchitiet, new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    //    Log.d("lỗi1", response.toString());
                                     if (response.equals("ok")) {
                                         Toast.makeText(MainOrder.this, "Thanh toan thành công!", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(MainOrder.this, Navigation.class));
@@ -253,7 +253,6 @@ public class MainOrder extends AppCompatActivity {
                                     for (int i = 0; i < listgh.size(); i++) {
                                         JSONObject jsonOject = new JSONObject();
                                         try {
-
                                             jsonOject.put("idhd", donhang.getText().toString().trim());
                                             jsonOject.put("masp", listgh.get(i).getIdgh());
                                             jsonOject.put("tensp", listgh.get(i).getTensp());

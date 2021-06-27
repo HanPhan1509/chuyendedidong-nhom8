@@ -53,8 +53,8 @@ public class MainInfoBill extends AppCompatActivity {
     String urltt = ConnectServer.thanhtoan;
     String urldh = ConnectServer.cthoadon;
     Toolbar toolbar;
-    private SharedPreferences sharedPreferences1;
-    private SharedPreferences.Editor editor1;
+//    private SharedPreferences sharedPreferences1;
+//    private SharedPreferences.Editor editor1;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
@@ -63,11 +63,11 @@ public class MainInfoBill extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chitiethoadon);
-        sharedPreferences1 = this.getSharedPreferences("chitiet", this.MODE_PRIVATE);
-        editor1 = sharedPreferences1.edit();
-        ///////////////////////////////////
         sharedPreferences = this.getSharedPreferences("luutaikhoan", this.MODE_PRIVATE);
-        editor1 = sharedPreferences.edit();
+        editor = sharedPreferences.edit();
+
+        MainBill.sharedPreferences1 = this.getSharedPreferences("chitiet", this.MODE_PRIVATE);
+        MainBill.editor1 = MainBill.sharedPreferences1.edit();
         toolbar = findViewById(R.id.toolBarchitiet);
         toolbar.setNavigationIcon(R.drawable.back2);
         toolbar.setOnClickListener(new View.OnClickListener() {
@@ -183,7 +183,7 @@ public class MainInfoBill extends AppCompatActivity {
         StringRequest jsonArray = new StringRequest(Request.Method.POST, urldh, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                int id = sharedPreferences1.getInt("madonhang", 0);
+                int id = MainBill.sharedPreferences1.getInt("madonhang", 0);
                 Log.e("run: ", id + " ---- " + response.toString());
                 try {
                     JSONArray jsonArray = new JSONArray(response);
@@ -223,7 +223,7 @@ public class MainInfoBill extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> pra = new HashMap<>();
-                int id = sharedPreferences1.getInt("madonhang", 0);
+                int id = MainBill.sharedPreferences1.getInt("madonhang", 0);
                 Log.d(String.valueOf(id), "aaaaaaaaa");
                 pra.put("idhd", String.valueOf(id));
                 return pra;

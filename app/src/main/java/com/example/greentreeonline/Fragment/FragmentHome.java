@@ -355,12 +355,10 @@ public class FragmentHome extends Fragment {
     }
 
     private void getcay() {
-
         RequestQueue connnect = Volley.newRequestQueue(getActivity());
         JsonArrayRequest jsonArray = new JsonArrayRequest(Request.Method.GET, urlcaycanh, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-
                 for (int i = 0; i < response.length(); i++) {
 
                     try {
@@ -376,13 +374,10 @@ public class FragmentHome extends Fragment {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
                 }
-
                 adapcay.notifyDataSetChanged();
 //                Toast.makeText(getContext().getApplicationContext(), "" + ssale.size(), Toast.LENGTH_SHORT).show();
             }
-
         },
                 new Response.ErrorListener() {
                     @Override
