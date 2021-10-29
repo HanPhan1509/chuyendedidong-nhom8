@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".Main.Login.MainSetting">
+<androidx.appcompat.widget.Toolbar
+    app:title="Cài đặt"
+    android:id="@+id/tbsettting"
+    app:titleTextColor="#000000"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</androidx.appcompat.widget.Toolbar>
+    <Button
+        android:id="@+id/updatetk"
+        android:layout_marginTop="10dp"
+        android:text="Cập nhật thông tin"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Button>
+    <Button
+        android:id="@+id/dcshop"
+        android:text="Địa chỉ Shop"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Button>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/dangxuat"
+        android:text="Đăng Xuất"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+
+        android:background="#FFFFFF"
+        android:textColor="#F44336"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Button>
+        <Button
+            android:id="@+id/dangnhap"
+            android:text="Đăng Nhập"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"
+            android:textColor="#F44336"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </Button>
+    </FrameLayout>
+</LinearLayout>

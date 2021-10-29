@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAE9DF"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_toolbar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="1dp">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_form">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Hello"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/hotennguoidung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="... ... ..."
+                    android:textColor="#1e4368"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imgthongtin"
+                    android:layout_width="88dp"
+                    android:layout_height="81dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/hotennguoidung"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/hotennguoidung"
+                    app:layout_constraintTop_toTopOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.727"
+                    app:srcCompat="@drawable/anhnen3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/hoadon"/>
+
+                <TextView
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="Sản Phẩm"
+                    android:textColor="#1e4368"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/adsanpham"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    android:text="Danh sách sản phẩm >     "
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/donhangden">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="58dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="Đơn Mua"
+                        android:textColor="#1e4368"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/hoadon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="Xem lịch sử mua hàng >"
+                        android:textStyle="bold"
+                        android:textColor="#000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/thongke">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="58dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="Thống Kê"
+                        android:textColor="#1e4368"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/thongke"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textStyle="bold"
+                        android:text="Xem thống kê >"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_account_circle_black_24dp"
+                        tools:ignore="VectorDrawableCompat">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="58dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="Nhân viên"
+                        android:textColor="#1e4368"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nhanvien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textStyle="bold"
+                        android:text="Quản lý nhân viên >"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/updatetk"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginTop="10dp"
+                android:background="#59B2DA"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:gravity="center"
+
+                android:text="Cập nhật thông tin">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/dcshop"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:layout_marginTop="5dp"
+                android:background="#59B2DA"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:text="Địa chỉ Shop">
+
+            </TextView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/btndangxuat"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+
+                    android:layout_marginTop="5dp"
+                    android:background="#FFFFFF"
+
+                    android:gravity="center"
+                    android:text="Đăng Xuất"
+                    android:textColor="#F44336"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/btndangnhap"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#FFFFFF"
+
+                    android:gravity="center"
+                    android:text="Đăng Nhập"
+                    android:textColor="#F44336"
+                    android:textStyle="bold"></TextView>
+
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

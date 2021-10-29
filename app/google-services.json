@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "302784110813",
+    "firebase_url": "https://greentreeonline-9eb47-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "greentreeonline-9eb47",
+    "storage_bucket": "greentreeonline-9eb47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302784110813:android:7de86cb3e92a9d59e93b34",
+        "android_client_info": {
+          "package_name": "com.example.greentreeonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302784110813-brsddtq2lfchenec36mjm1n6km34a4ch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuBx7dcqLSzPqKpjPNeJkF1Lk_18ae0dY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302784110813-brsddtq2lfchenec36mjm1n6km34a4ch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
