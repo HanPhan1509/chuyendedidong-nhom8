@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2734d041-4799-4bfe-ae17-d94241fc030b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/.idea/dictionaries/Vien_Chelsea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterCategoryChild.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterCatgory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/ArrayAdapterCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/ArrayAdapterCategoryChild.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/Bill/AdapterAdminBill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/New/AdapRate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/New/AdapterBill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/New/AdapterCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/New/AdapterCartShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/New/AdapterFavourite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/New/AdapterProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/New/AdapterProductAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/New/adapnhanvien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/New/nhanvien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/New/themnhanvien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/New/updatenhanvien.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/Bill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/BillCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/CartShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/DoanhThu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/Favourite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/ProductBill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/Rate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/SortProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/New/Staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/User/Staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/User/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/BillFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/CartFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/CategoryFireBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/CustomerFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/DoanhThuFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/FavouriteFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/FirebaseCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/ProductFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/RateFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/StaffFirebase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Firebase/UserFireBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FractmentCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FragmentIInformation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Login/MainForgotPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainRate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/addmp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/anhnen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/anhnen3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/anhsp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/dagiao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/donhangden.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_danhmuc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_danhmuc_chose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_giohang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_giohang_chose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_home_chose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_taikhoan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_taikhoan_chose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_tk_caidat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_tk_chinhsach.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_tk_dhdahuy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_tk_diachi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_tk_donhangcuatoi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_tk_trogiup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_vitri.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/love.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/mipham.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/sg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/thongke.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable/fax.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable/hotline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable/map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable/my_border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable/sort.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_detailcat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_information.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_nhanvien.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_quenmatkhau.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_rate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_statusbill.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_thanhtoannew.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_themnhanvien.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_cartshop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_cat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_donhang.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_nhanvien.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_rate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_spiner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterOder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterStatusBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/AdapterStatusBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/Bill/AdapterBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/Bill/AdapterBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/Bill/AdapterInfoBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Adapter/Bill/AdapterInfoBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/adapsanpham.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/adapsanpham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/adapsanphamad.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/adapsanphamad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/donhangadmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/donhangadmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/sanpham.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/sanpham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/themsanpham.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/themsanpham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/thongke.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/thongke.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/updatesanpham.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Admin/updatesanpham.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/Favourite.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/Favourite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Class/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FragmentHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FragmentHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FragmentProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FragmentProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FragmentShopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Fragment/FragmentShopping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Bill/MainBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Bill/MainBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Bill/MainInfoBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Bill/MainInfoBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Bill/MainStatusBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Bill/MainStatusBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Customer/MainAddCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Customer/MainAddCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Customer/MainCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Customer/MainCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Login/MainLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Login/MainLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Login/MainRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Login/MainRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Login/MainUpdateProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Login/MainUpdateProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainInfoProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainInfoProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/MainSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Oder/MainOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Main/Oder/MainOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Navigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/Navigation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/sanphamdamua/sanphamdamua.java" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/java/com/example/greentreeonline/sanphamdamua/sanphamdamua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/customcolor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/customcolor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_cholayhang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/ic_cholayhang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/vien.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/drawable-v24/vienbbb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_admin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_admin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_chitiethoadon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_chitiethoadon.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_chitietsanpham.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_chitietsanpham.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_dangky.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_dangky.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_dangnhap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_dangnhap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_dashboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_giohang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_giohang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_sanpham.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_sanpham.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_sanphamdamua.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_sanphamdamua.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_sreach.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_sreach.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_themsanpham.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_themsanpham.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_thongtin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_thongtin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_thongtinkhachhang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_thongtinkhachhang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_updatetaikhoan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_updatetaikhoan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_wait.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_wait.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_yeuthich.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/activity_yeuthich.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/chitietsale.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/chitietsale.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_orderinfo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_orderinfo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/item_product.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/itemgiohang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/itemgiohang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/itemsale.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/itemsale.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/itemsanpham.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/itemsanpham.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/navi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/layout/navi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/menu/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SG COSMESTICS/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SG COSMESTICS/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/SG COSMESTICS" />
+  </component>
+  <component name="ProjectId" id="207MXXyK1v8vHsdTgzwKGTFnrSx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SG COSMESTICS" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2734d041-4799-4bfe-ae17-d94241fc030b" name="Default Changelist" comment="" />
+      <created>1635391212744</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635391212744</updated>
+    </task>
+    <servers />
+  </component>
+</project>
