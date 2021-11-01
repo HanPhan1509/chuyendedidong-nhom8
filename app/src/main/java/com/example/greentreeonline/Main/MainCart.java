@@ -3,30 +3,31 @@ package com.example.greentreeonline.Main;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.greentreeonline.Adapter.AdapterCart;
-import com.example.greentreeonline.Fragment.FragmentHome;
+import com.example.greentreeonline.Adapter.AdapterCallback;
+import com.example.greentreeonline.Adapter.New.AdapterCartShop;
+import com.example.greentreeonline.Class.New.Cart;
+import com.example.greentreeonline.Class.New.CartShop;
+import com.example.greentreeonline.Firebase.CartFirebase;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
 import com.example.greentreeonline.Main.Login.MainLogin;
 import com.example.greentreeonline.Main.Oder.MainOrder;
 import com.example.greentreeonline.Navigation;
 import com.example.greentreeonline.R;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 import static com.example.greentreeonline.Fragment.FragmentHome.listgh;
 
@@ -34,12 +35,22 @@ public class MainCart extends AppCompatActivity {
 
     public static TextView tvTongTien;
     Button btthanhtoan, ttmuahag;
-    ListView lvGioHang;
+    RecyclerView lvGioHang;
     TextView sosanpham;
+    ArrayList<Cart> listgh;
+    ArrayList<CartShop> cartShops;
 
-    AdapterCart adapterGioHang;
+    CartFirebase cartFirebase;
+
+//    AdapterCart adapterGioHang;
+    AdapterCartShop adapterCartShop;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+
+    String urlImage = "https://firebasestorage.googleapis.com/v0/b/greentreeonline-9eb47.appspot.com/o/";
+    String duoiimg = "?alt=media";
+
+    String idUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,25 +59,48 @@ public class MainCart extends AppCompatActivity {
 
         sharedPreferences = this.getSharedPreferences("luutaikhoan", this.MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
+        idUser = sharedPreferences.getString("id", "0");
+
+        cartFirebase = new CartFirebase();
+
         anhxa();
-        xoa();
         onclick();
         tongtien();
+        getCart();
     }
 
     public void anhxa() {
-        lvGioHang = (ListView) findViewById(R.id.lvGioHang);
+        lvGioHang = (RecyclerView) findViewById(R.id.lvGioHang);
         tvTongTien = (TextView) findViewById(R.id.tongtien);
         ttmuahag = (Button) findViewById(R.id.ttmuahang);
         sosanpham = findViewById(R.id.numbercart);
-        int dem = listgh.size();
-        Log.d( "anhxa: ", String.valueOf(dem));
 
-        sosanpham.setText("("+dem+")");
+        listgh = new ArrayList<>();
+
         btthanhtoan = (Button) findViewById(R.id.thanhtoan);
-        adapterGioHang = new AdapterCart(getApplicationContext(), listgh);
-        lvGioHang.setAdapter(adapterGioHang);
+        cartShops = new ArrayList<>();
+
+        lvGioHang.setHasFixedSize(true);
+        lvGioHang.setLayoutManager(new GridLayoutManager(this, 1));
+        adapterCartShop = new AdapterCartShop(getApplicationContext(), cartShops, adapterCallback);
+        lvGioHang.setAdapter(adapterCartShop);
     }
+
+    AdapterCallback adapterCallback = new AdapterCallback() {
+        @Override
+        public void onCallBack(Object obj) {
+            if (obj instanceof ArrayList<?>) {
+                ArrayList<Integer> integers = (ArrayList<Integer>) obj;
+                xoa(integers.get(0), integers.get(1));
+            }else{
+                Cart event = (Cart) obj;
+                if (event != null) {
+                    updateCart(event);
+                }
+            }
+        }
+    };
 
     public void onclick() {
         ttmuahag.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +108,6 @@ public class MainCart extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainCart.this, Navigation.class);
                 startActivity(intent);
-
             }
         });
         btthanhtoan.setOnClickListener(new View.OnClickListener() {
@@ -82,30 +115,16 @@ public class MainCart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (FragmentHome.listgh.size() > 0) {
-//                    if (thongtin.acc.size() == 0) {
-//                        Intent intent = new Intent(giohang.this, dangnhap.class);
-//                        startActivity(intent);
-//                    } else {
-//                        Intent intent = new Intent(giohang.this, thanhtoan.class);
-//                        startActivity(intent);
-//                    }
-//                } else {
-//                    Toast.makeText(giohang.this, "Bạn chưa nhập sản phẩm nào cho giỏ hàng!", Toast.LENGTH_SHORT).show();
-//                    return;
+                if (cartShops.size() > 0) {
 
-                            String TenTk=sharedPreferences.getString("taikhoan","");
-                            if (!TextUtils.isEmpty(TenTk)) {
-                                startActivity(new Intent(getApplicationContext(), MainOrder.class));
-                            }
-                            else {
-                                Toast.makeText(MainCart.this, "Bạn cần đăng nhập", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), MainLogin.class));
-
-                            finish();
-
-
-                }
+                    String TenTk = sharedPreferences.getString("taikhoan", "");
+                    if (!TextUtils.isEmpty(TenTk)) {
+                        startActivity(new Intent(getApplicationContext(), MainOrder.class));
+                    } else {
+                        Toast.makeText(MainCart.this, "Bạn cần đăng nhập", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MainLogin.class));
+                        finish();
+                    }
                 }
 
             }
@@ -113,42 +132,82 @@ public class MainCart extends AppCompatActivity {
 
     }
 
-
-    public void xoa() {
-        lvGioHang.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+    public void updateCart(Cart cart){
+        cartFirebase.addCart(cart, new FirebaseCallback() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(MainCart.this);
-                builder.setTitle("Bạn có muốn xoá sản phẩm này?");
-
-                builder.setNegativeButton("Có", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        listgh.remove(position);
-                        adapterGioHang.notifyDataSetChanged();
-                        tongtien();
-                    }
-                });
-                builder.setPositiveButton("Không", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-                builder.show();
-                return false;
+            public void onCallBack(Object obj) {
+                if((boolean) obj == true){
+                    setTvTongTien();
+                }
             }
         });
+    }
+
+    public void getCart() {
+        cartFirebase.getCartUserId(idUser, new FirebaseCallback() {
+            @Override
+            public void onCallBack(Object obj) {
+                for (CartShop cart : (ArrayList<CartShop>) obj) {
+                    cartShops.add(cart);
+                }
+                setTvTongTien();
+                adapterCartShop.notifyDataSetChanged();
+            }
+        });
+    }
+
+
+    public void xoa(int position, int position2) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainCart.this);
+        builder.setTitle("Bạn có muốn xoá sản phẩm này?");
+
+        builder.setNegativeButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                cartFirebase.deleteCart(idUser, cartShops.get(position).getIdshop(), cartShops.get(position).getCarts().get(position2).getIdsp(), new FirebaseCallback() {
+                    @Override
+                    public void onCallBack(Object obj) {
+                        if ((boolean) obj) {
+                            cartShops.get(position).getCarts().remove(position);
+                            adapterCartShop.notifyDataSetChanged();
+                            setTvTongTien();
+                        }
+                    }
+                });
+            }
+        });
+        builder.setPositiveButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.show();
+    }
+
+    public void setTvTongTien() {
+        int gia = 0;
+        int sosp = 0;
+        for (CartShop cartShop : cartShops) {
+            for(Cart cart: cartShop.getCarts()){
+                gia += cart.tongTien();
+                sosp++;
+            }
+        }
+        sosanpham.setText(sosp + "");
+
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        tvTongTien.setText(decimalFormat.format(gia) + " VNĐ");
     }
 
     public static void tongtien() {
 
-        int tongTien = 0;
-        for (int i = 0; i < listgh.size(); i++) {
-            tongTien += listgh.get(i).tongTien();
-        }
-        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        tvTongTien.setText(decimalFormat.format(tongTien) + " VNĐ");
+//        int tongTien = 0;
+//        for (int i = 0; i < this.listgh.size(); i++) {
+//            tongTien += listgh.get(i).tongTien();
+//        }
+//        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+//        tvTongTien.setText(decimalFormat.format(tongTien) + " VNĐ");
         //}
     }
 }

@@ -36,7 +36,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/anh_logo" />
+        android:src="@drawable/anhsp" />
 
 
                 </LinearLayout>

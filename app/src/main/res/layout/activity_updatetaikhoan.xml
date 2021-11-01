@@ -19,21 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp">
-
-            <EditText
-                android:id="@+id/edtaikhoan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Tài khoản"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -78,21 +63,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Địa Chỉ"
                  />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp">
-
-            <EditText
-                android:id="@+id/eddate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Ngày Sinh"
-                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

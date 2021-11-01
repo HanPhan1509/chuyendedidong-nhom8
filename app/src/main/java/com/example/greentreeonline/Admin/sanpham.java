@@ -1,52 +1,53 @@
 package com.example.greentreeonline.Admin;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 import android.widget.Toolbar;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.greentreeonline.Class.Product;
+import com.example.greentreeonline.Admin.New.AdapterProductAdmin;
+import com.example.greentreeonline.Class.New.Product;
 import com.example.greentreeonline.ConnectServer.ConnectServer;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
+import com.example.greentreeonline.Firebase.ProductFirebase;
 import com.example.greentreeonline.Navigation;
 import com.example.greentreeonline.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class sanpham extends AppCompatActivity {
-    String urlcaycanh = ConnectServer.trangchu;
-    String urlxoa = ConnectServer.xoassp;
     ArrayList<Product> sp;
     RecyclerView recyclerView, resale;
-    adapsanphamad adapcay;
+    AdapterProductAdmin adapcay;
     Toolbar tbsanpham;
     ImageButton add;
+    ProductFirebase productFirebase;
+    String idUser;
+    private SharedPreferences sharedPreferences;
+    private android.content.SharedPreferences.Editor editor;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sanpham);
-        //sp = new ArrayList<objsanpham>();
+        sharedPreferences = this.getSharedPreferences("luutaikhoan", this.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        idUser = sharedPreferences.getString("id", "0");
+
         tbsanpham = findViewById(R.id.tbsanpham);
+        productFirebase = new ProductFirebase();
 
         tbsanpham.setNavigationIcon(R.drawable.back2);
         tbsanpham.setOnClickListener(new View.OnClickListener() {
@@ -66,88 +67,62 @@ public class sanpham extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        sp = new ArrayList<Product>();
-        adapcay = new adapsanphamad(sanpham.this, sp);
+        sp = new ArrayList<>();
+        adapcay = new AdapterProductAdmin(sanpham.this, sp);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         recyclerView.setAdapter(adapcay);
+        deleteCache(getApplicationContext());
         getcay();
     }
 
-    public void xoasanpham(final int idsp) {
-        RequestQueue connnect = Volley.newRequestQueue(this);
-        StringRequest jsonArray = new StringRequest(Request.Method.POST, urlxoa, new Response.Listener<String>() {
+    public void xoasanpham(Product product, int pos) {
+        productFirebase.removeProduct(product, new FirebaseCallback() {
             @Override
-            public void onResponse(String response) {
-                if (response.equals("ok")) {
-                    Toast.makeText(sanpham.this, "Xoa thanh cong", Toast.LENGTH_SHORT).show();
-                    getcay();
-                    Intent intent = new Intent(sanpham.this, Navigation.class);
-                    startActivity(intent);
+            public void onCallBack(Object obj) {
+                if((boolean) obj == true){
+                    sp.remove(pos);
+                    adapcay.notifyDataSetChanged();
                 }
             }
-
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(sanpham.this, error.toString(), Toast.LENGTH_SHORT).show();
-
-                    }
-                }
-        ) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> pra = new HashMap<>();
-                pra.put("id", String.valueOf(idsp));
-                return pra;
-            }
-        };
-        connnect.add(jsonArray);
-
-
+        });
     }
 
     public void getcay() {
-
-        RequestQueue connnect = Volley.newRequestQueue(this);
-        JsonArrayRequest jsonArray = new JsonArrayRequest(Request.Method.GET, urlcaycanh, null, new Response.Listener<JSONArray>() {
+        productFirebase.getAllProductUserID(idUser, new FirebaseCallback() {
             @Override
-            public void onResponse(JSONArray response) {
-
-                for (int i = 0; i < response.length(); i++) {
-
-                    try {
-                        JSONObject jsonsp = response.getJSONObject(i);
-                        int id = jsonsp.getInt("id");
-                        String tensp = jsonsp.getString("tensp");
-                        int gia = jsonsp.getInt("giasp");
-                        String igmsp = jsonsp.getString("igmsp");
-                        String mota = jsonsp.getString("mota");
-
-                        sp.add(new Product(id, tensp, gia, igmsp, mota));
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
+            public void onCallBack(Object obj) {
+                ArrayList<Product> arrayList = (ArrayList<Product>) obj;
+                for (Product product: arrayList){
+                    sp.add(product);
+                    adapcay.notifyDataSetChanged();
                 }
-
-                adapcay.notifyDataSetChanged();
-                //Toast.makeText(getContext().getApplicationContext(), "" + ssale.size(), Toast.LENGTH_SHORT).show();
             }
+        });
+    }
 
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(sanpham.this, error.toString(), Toast.LENGTH_SHORT).show();
+    public static void deleteCache(Context context) {
+        try {
+            File dir = context.getCacheDir();
+            deleteDir(dir);
+        } catch (Exception e) { e.printStackTrace();}
+    }
 
-                    }
+    public static boolean deleteDir(File dir) {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
                 }
-        );
-        connnect.add(jsonArray);
-
+            }
+            return dir.delete();
+        } else if(dir!= null && dir.isFile()) {
+            return dir.delete();
+        } else {
+            return false;
+        }
     }
 }
 

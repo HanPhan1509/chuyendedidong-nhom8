@@ -9,12 +9,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
 
 import com.example.greentreeonline.Admin.donhangadmin;
-import com.example.greentreeonline.Class.Bill.Bill;
+import com.example.greentreeonline.Class.New.Bill;
+import com.example.greentreeonline.Firebase.BillFirebase;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
 import com.example.greentreeonline.Main.Bill.MainBill;
 import com.example.greentreeonline.Main.Bill.MainInfoBill;
 import com.example.greentreeonline.R;
@@ -27,18 +30,14 @@ import static com.example.greentreeonline.Fragment.FragmentHome.objdh;
 
 public class AdapterBill extends BaseAdapter {
     MainBill context;
-    donhangadmin context1;
-    ArrayList<Bill> listdonhang = new ArrayList<>();
+    ArrayList<Bill> listdonhang;
 
-    public AdapterBill(MainBill MainBill, ArrayList<Bill> objdh) {
-        this.context = MainBill;
+    BillFirebase billFirebase;
+
+    public AdapterBill(MainBill context, ArrayList<Bill> objdh) {
+        this.context = context;
         this.listdonhang = objdh;
-    }
-
-
-    public AdapterBill(donhangadmin donhangadmin, ArrayList<Bill> objdh) {
-        this.context1 = donhangadmin;
-        this.listdonhang = objdh;
+        billFirebase = new BillFirebase();
     }
 
     @Override
@@ -77,29 +76,30 @@ public class AdapterBill extends BaseAdapter {
             viewHolder.date=(TextView) convertView.findViewById(R.id.tv_hitory_product_date);
             viewHolder.huy = (TextView) convertView.findViewById(R.id.txthuydonhang);
             final Bill kh = listdonhang.get(position);
+            if(kh.getStatus() > 0){
+                viewHolder.huy.setVisibility(View.INVISIBLE);
+            }
 
-            viewHolder.madh.setText(kh.getIddh() + "");
+            viewHolder.madh.setText(kh.getId() + "");
             viewHolder.tenkh.setText(kh.getTenkh());
-            viewHolder.dckh.setText(kh.getDiachigh());
+            viewHolder.dckh.setText(kh.getDiachi());
             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-            viewHolder.tongt.setText(decimalFormat.format(kh.getTt()) + " VND");
-            viewHolder.date.setText(kh.getNgay());
-            viewHolder.tt.setText(kh.getTrangthai());
+            viewHolder.tongt.setText(decimalFormat.format(kh.getTongtien()) + " VND");
+            viewHolder.date.setText(kh.getDate());
+            viewHolder.tt.setText(kh.getNamestatus());
             convertView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, MainInfoBill.class);
-                    // intent.putExtra("chitiethoadon",arrayxacnhan.get(position));
-
-                    intent.putExtra("madonhang", "#" + objdh.get(position).getIddh() + "");
-                    intent.putExtra("sdt", "0" + objdh.get(position).getSdt() + "");
-                    intent.putExtra("tenkh", objdh.get(position).getTenkh().toString());
-                    intent.putExtra("diachi", objdh.get(position).getDiachigh().toString());
-                    intent.putExtra("ngay", objdh.get(position).getNgay().toString());
-                    intent.putExtra("phiship", objdh.get(position).getPhiship() + "đ");
-                    intent.putExtra("tamtinh", objdh.get(position).getTamtinh() + "đ");
-                    intent.putExtra("tongtien", objdh.get(position).getTt() + "đ");
-                    intent.putExtra("trangthai", " Đơn hàng " + objdh.get(position).getTrangthai().toString());
+                    intent.putExtra("madonhang",listdonhang.get(position).getId() + "");
+                    intent.putExtra("sdt", "0" + listdonhang.get(position).getDt() + "");
+                    intent.putExtra("tenkh", listdonhang.get(position).getTenkh().toString());
+                    intent.putExtra("diachi", listdonhang.get(position).getDiachi().toString());
+                    intent.putExtra("ngay", listdonhang.get(position).getDate().toString());
+                    intent.putExtra("phiship", listdonhang.get(position).getPhiship() + "đ");
+                    intent.putExtra("tamtinh", listdonhang.get(position).getTamtinh() + "đ");
+                    intent.putExtra("tongtien", listdonhang.get(position).getTongtien() + "đ");
+                    intent.putExtra("trangthai", " Đơn hàng " + listdonhang.get(position).getNamestatus().toString());
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }
@@ -107,7 +107,7 @@ public class AdapterBill extends BaseAdapter {
             viewHolder.huy.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    huy(kh.getIddh());
+                    huy(kh.getId(), position);
 
                 }
             });
@@ -117,16 +117,14 @@ public class AdapterBill extends BaseAdapter {
         return convertView;
     }
 
-    public void huy(final int id) {
+    public void huy(String id, int pos) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Bạn có hủy đơn hàng : " + id + " ?");
 
         builder.setNegativeButton(" Hủy", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-                context.huydonhang(id);
-                context.getdonhang();
+                context.huydonhang(id, pos);
             }
         });
         builder.setPositiveButton("Không", new DialogInterface.OnClickListener() {

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.greentreeonline.Admin.New.nhanvien;
 import com.example.greentreeonline.Main.Bill.MainStatusBill;
 import com.example.greentreeonline.Main.Login.MainLogin;
 import com.example.greentreeonline.Main.Login.MainUpdateProfile;
@@ -26,7 +27,7 @@ public class admin extends Fragment {
 
     TextView tk, sp,hd;
     public static TextView hoten1, gioitinh, date, mail, sdt1, dc, cho;
-    private TextView btndangxuat, dcs, btndangnhap, update,xemlsdh,like;
+    private TextView btndangxuat, dcs, btndangnhap, update,xemlsdh,like, nhanvien;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -39,6 +40,7 @@ public class admin extends Fragment {
         tk = view.findViewById(R.id.thongke);
         sp = view.findViewById(R.id.adsanpham);
         hd= view.findViewById(R.id.hoadon);
+        nhanvien = view.findViewById(R.id.nhanvien);
         hoten1 = view.findViewById(R.id.hotennguoidung);
 //        gioitinh = view.findViewById(R.id.gioitinh);
 //        date = view.findViewById(R.id.ngaysinh);
@@ -59,6 +61,14 @@ public class admin extends Fragment {
         sharedPreferences1 = getContext().getSharedPreferences("chitiet", getContext().MODE_PRIVATE);
         editor1 = sharedPreferences1.edit();
         click();
+
+        nhanvien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), com.example.greentreeonline.Admin.New.nhanvien.class);
+                startActivity(intent);
+            }
+        });
 
 
 CheckData();
@@ -88,20 +98,20 @@ CheckData();
         hd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainStatusBill.class);
+                Intent intent = new Intent(getActivity(), donhangadmin.class);
                 startActivity(intent);
             }
         });
     }
 
     public void diachishop() {
-        dcs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MainMap.class);
-                startActivity(intent);
-            }
-        });
+//        dcs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getContext(), MainMap.class);
+//                startActivity(intent);
+//            }
+//        });
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

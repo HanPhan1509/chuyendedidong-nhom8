@@ -55,6 +55,10 @@ public class Cart {
         this.sl = sl;
     }
 
+    public Cart(){
+
+    }
+
     public int tongTien(){
         return Gia*sl;
     }

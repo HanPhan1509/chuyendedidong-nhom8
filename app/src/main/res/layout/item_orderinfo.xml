@@ -45,7 +45,7 @@
             android:layout_height="70dp"
             android:layout_below="@+id/divider"
             android:layout_marginTop="5dp"
-            android:background="@drawable/greentreee"></ImageView>
+            android:background="@drawable/anhsp"></ImageView>
 
         <TextView
             android:id="@+id/tv_hitory_product_name"

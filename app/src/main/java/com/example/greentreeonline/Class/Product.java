@@ -1,29 +1,34 @@
 package com.example.greentreeonline.Class;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 import java.io.Serializable;
 
+@IgnoreExtraProperties
 public class Product implements Serializable {
-    int idsp;
+    String idsp;
     String tensp;
-    int Gt;
+    int gia;
     String imgsp;
     String mota;
+    String idcat;
 
-    public Product(int id, String tensp, int gia, String igmsp, String mota) {
-        this.idsp = id;
-        this.tensp = tensp;
-        Gt = gia;
-        this.imgsp = igmsp;
-        this.mota = mota;
+    public Product(){
 
     }
+    public Product(String idsp, String tensp, int gia, String imgsp, String mota) {
+        this.idsp = idsp;
+        this.tensp = tensp;
+        this.gia = gia;
+        this.imgsp = imgsp;
+        this.mota = mota;
+    }
 
-
-    public int getIdsp() {
+    public String getIdsp() {
         return idsp;
     }
 
-    public void setIdsp(int idsp) {
+    public void setIdsp(String idsp) {
         this.idsp = idsp;
     }
 
@@ -35,12 +40,12 @@ public class Product implements Serializable {
         this.tensp = tensp;
     }
 
-    public int getGt() {
-        return Gt;
+    public int getGia() {
+        return gia;
     }
 
-    public void setGt(int gt) {
-        Gt = gt;
+    public void setGia(int gia) {
+        gia = gia;
     }
 
     public String getImgsp() {

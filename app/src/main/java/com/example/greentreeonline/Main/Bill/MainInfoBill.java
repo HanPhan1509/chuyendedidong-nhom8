@@ -8,8 +8,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -22,12 +24,17 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.greentreeonline.Adapter.Bill.AdapterInfoBill;
 import com.example.greentreeonline.Class.Bill.Bill;
 import com.example.greentreeonline.Class.Bill.InfoBill;
+import com.example.greentreeonline.Class.New.ProductBill;
+import com.example.greentreeonline.Class.Product;
 import com.example.greentreeonline.ConnectServer.ConnectServer;
+import com.example.greentreeonline.Firebase.BillFirebase;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
 import com.example.greentreeonline.Main.Oder.MainOrder;
 import com.example.greentreeonline.Navigation;
 import com.example.greentreeonline.R;
@@ -38,6 +45,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.example.greentreeonline.Fragment.FragmentHome.listgh;
@@ -45,18 +53,22 @@ import static com.example.greentreeonline.Fragment.FragmentHome.listgh;
 public class MainInfoBill extends AppCompatActivity {
     TextView donhang, sdt, dc, trangthai, date, chon;
     TextView gia, phiship, ten, tamtinh, tongtien;
-    ArrayList<InfoBill> objdh;
+    ArrayList<ProductBill> objdh;
     Bill sp;
     ListView listView;
     AdapterInfoBill adtt;
     Button chot, huy;
-    String urltt = ConnectServer.thanhtoan;
-    String urldh = ConnectServer.cthoadon;
     Toolbar toolbar;
-//    private SharedPreferences sharedPreferences1;
+    //    private SharedPreferences sharedPreferences1;
 //    private SharedPreferences.Editor editor1;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+
+    String dh;
+
+    BillFirebase billFirebase;
+
+    Spinner spn_status;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -68,6 +80,9 @@ public class MainInfoBill extends AppCompatActivity {
 
         MainBill.sharedPreferences1 = this.getSharedPreferences("chitiet", this.MODE_PRIVATE);
         MainBill.editor1 = MainBill.sharedPreferences1.edit();
+
+        billFirebase = new BillFirebase();
+
         toolbar = findViewById(R.id.toolBarchitiet);
         toolbar.setNavigationIcon(R.drawable.back2);
         toolbar.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +94,6 @@ public class MainInfoBill extends AppCompatActivity {
         });
         anhxa();
         getDataChiTiet1();
-
         getcay();
     }
 
@@ -88,65 +102,15 @@ public class MainInfoBill extends AppCompatActivity {
 
         builder.setMessage("Xác nhận chốt đơn ");
         builder.setPositiveButton("có", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                RequestQueue queue = Volley.newRequestQueue(MainInfoBill.this);
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, urltt, new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response) {
-                        Log.d("load ", response.toString());
-                        if (response.trim().equals("ok")) {
-                            Toast.makeText(MainInfoBill.this, "Chốt đơn thành công!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MainInfoBill.this, Navigation.class));
-                            listgh.clear();
-                        } else {
-                            Toast.makeText(MainInfoBill.this, "thất bại! ", Toast.LENGTH_SHORT).show();
-                        }
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainInfoBill.this, "Chốt đơn thành công!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainInfoBill.this, Navigation.class));
+                        listgh.clear();
+                        Toast.makeText(MainInfoBill.this, "thất bại! ", Toast.LENGTH_SHORT).show();
                     }
-                },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(MainInfoBill.this, error.toString(), Toast.LENGTH_SHORT).show();
-                            }
-                        }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        JSONArray jsonArray = new JSONArray();
-                        for (int i = 0; i < listgh.size(); i++) {
-                            JSONObject jsonOject = new JSONObject();
-                            try {
-                                int idtk = sharedPreferences.getInt("id", 0);
-                                Log.e("getParams: ", String.valueOf(idtk));
-                                jsonOject.put("idtaikhoan", String.valueOf(idtk));
-                                jsonOject.put("madonhang", donhang.getText().toString().trim());
-                                jsonOject.put("masp", listgh.get(i).getIdgh());
-                                jsonOject.put("tensp", listgh.get(i).getTensp());
-                                jsonOject.put("giasp", listgh.get(i).getGia() + "");
-                                jsonOject.put("soluong", listgh.get(i).getSl() + "");
-                                jsonOject.put("tenkh", ten.getText().toString().trim());
-                                jsonOject.put("sdt", sdt.getText().toString().trim());
-                                jsonOject.put("diachi", dc.getText().toString().trim());
-                                jsonOject.put("ngay", date.getText().toString().trim());
-                                jsonOject.put("phiship", phiship.getText().toString().trim());
-                                jsonOject.put("tamtinh", tamtinh.getText().toString().trim());
-                                jsonOject.put("tongtien", gia.getText().toString().trim());
-                                jsonArray.put(jsonOject);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        HashMap<String, String> param = new HashMap<>();
-                        param.put("json", jsonArray.toString());
-                        return param;
-                    }
-                };
-
-                queue.add(stringRequest);
-
-            }
-        });
+                }
+        );
 
         builder.setNegativeButton("Không ", new DialogInterface.OnClickListener() {
             @Override
@@ -161,7 +125,7 @@ public class MainInfoBill extends AppCompatActivity {
     public void anhxa() {
 
         listView = (ListView) findViewById(R.id.lvinfodonhang);
-        objdh = new ArrayList<InfoBill>();
+        objdh = new ArrayList<ProductBill>();
         adtt = new AdapterInfoBill(MainInfoBill.this, objdh);
         listView.setAdapter(adtt);
 
@@ -178,67 +142,21 @@ public class MainInfoBill extends AppCompatActivity {
     }
 
     private void getcay() {
-
-        RequestQueue connnect = Volley.newRequestQueue(this);
-        StringRequest jsonArray = new StringRequest(Request.Method.POST, urldh, new Response.Listener<String>() {
+        billFirebase.getProductBillByBillId(dh, new FirebaseCallback() {
             @Override
-            public void onResponse(String response) {
-                int id = MainBill.sharedPreferences1.getInt("madonhang", 0);
-                Log.e("run: ", id + " ---- " + response.toString());
-                try {
-                    JSONArray jsonArray = new JSONArray(response);
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        Log.d("erro:", jsonArray.toString());
-                        JSONObject jsonsp = jsonArray.getJSONObject(i);
-                        int idct = jsonsp.getInt("idchitiet");
-                        int id1 = jsonsp.getInt("idhd");
-                        int masp = jsonsp.getInt("masp");
-                        String tensp = jsonsp.getString("tensp");
-                        int gia = jsonsp.getInt("giasp");
-                        String igmsp = jsonsp.getString("imgsp");
-                        int sl = jsonsp.getInt("soluong");
-                        objdh.add(new InfoBill(idct, id1, masp, tensp, gia, igmsp, sl));
-
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            public void onCallBack(Object obj) {
+                for (ProductBill productBill : (ArrayList<ProductBill>) obj) {
+                    objdh.add(productBill);
                 }
-
-
                 adtt.notifyDataSetChanged();
-                // Toast.makeText(getContext().getApplicationContext(), ""+yt.size(), Toast.LENGTH_SHORT).show();
-
             }
-
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("erro:", error.toString());
-
-                        Toast.makeText(MainInfoBill.this, error.toString(), Toast.LENGTH_SHORT).show();
-
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> pra = new HashMap<>();
-                int id = MainBill.sharedPreferences1.getInt("madonhang", 0);
-                Log.d(String.valueOf(id), "aaaaaaaaa");
-                pra.put("idhd", String.valueOf(id));
-                return pra;
-            }
-        };
-        connnect.add(jsonArray);
-
+        });
     }
-
-
 
 
     private void getDataChiTiet1() {
         Intent intent = getIntent();
-        String dh = intent.getStringExtra("madonhang");
+        dh = intent.getStringExtra("madonhang");
         donhang.setText(dh);
         String ten1 = intent.getStringExtra("tenkh");
         ten.setText(ten1);
@@ -256,8 +174,6 @@ public class MainInfoBill extends AppCompatActivity {
         phiship.setText(phi);
         String trthai = intent.getStringExtra("trangthai");
         trangthai.setText(trthai);
-
-        ;
     }
 
 }

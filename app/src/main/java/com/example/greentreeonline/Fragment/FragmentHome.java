@@ -36,21 +36,27 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.greentreeonline.Adapter.AdapterBanner;
-import com.example.greentreeonline.Adapter.AdapterProduct;
 import com.example.greentreeonline.Adapter.AdapterSale;
+import com.example.greentreeonline.Adapter.New.AdapterProduct;
 import com.example.greentreeonline.Class.Bill.Bill;
 import com.example.greentreeonline.Class.Cart;
+import com.example.greentreeonline.Class.Category.Category;
+import com.example.greentreeonline.Class.Category.CategoryChild;
 import com.example.greentreeonline.Class.Customer;
 import com.example.greentreeonline.Class.Favourite;
-import com.example.greentreeonline.Class.Product;
+import com.example.greentreeonline.Class.New.Product;
 import com.example.greentreeonline.Class.Sale;
 import com.example.greentreeonline.Class.SlidePhoto;
 import com.example.greentreeonline.ConnectServer.ConnectServer;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
+import com.example.greentreeonline.Firebase.ProductFirebase;
 import com.example.greentreeonline.Main.MainCart;
 import com.example.greentreeonline.Main.MainSearch;
 import com.example.greentreeonline.Main.Sale.MainSale;
 import com.example.greentreeonline.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -64,7 +70,7 @@ import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
 
-public class FragmentHome extends Fragment {
+public class FragmentHome<mDatabase> extends Fragment {
     DrawerLayout drawerLayout;
     BottomNavigationView bottomNavigationView;
     ViewFlipper viewFlipper;
@@ -74,9 +80,10 @@ public class FragmentHome extends Fragment {
     ImageButton gh;
     TextView xemthem, tvsreach;
     ListView lvsale;
-    ArrayList<Sale> ssale;
-    AdapterSale sgg;
     SearchView searchView;
+
+    ProductFirebase productFirebase;
+
     boolean isloading, limitdata = false;
     public static ArrayList<Product> sp;
     public static ArrayList<Favourite> yt;
@@ -97,19 +104,49 @@ public class FragmentHome extends Fragment {
     private RecyclerView rcvProduct, rcvSale;
     private CircleIndicator circleIndicator;
     List<SlidePhoto> listSlidePhoto = new ArrayList<>();
+
+    public FragmentHome() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("category");
+
+//        //category
+//        //sửa lại cái cây cảnh là category
+//        String userId = myRef.push().getKey();
+//        Category category = new Category(userId, "CHĂM SÓC TOÀN THÂN");
+//        myRef.child(userId).setValue(category);
+//
+//        //categorychilid
+//        //còn cái này là add cate child cho nó
+//
+//        ArrayList<String> categoryChild = new ArrayList<String>();
+//        categoryChild.add("Dưỡng thể - Body Lotion");
+//        categoryChild.add("Sữa tăm");
+//        categoryChild.add("Kem dưỡng toàn thân");
+//        categoryChild.add("Dưỡng da tay");
+//        categoryChild.add("Tẩy tế bào chết");
+//        categoryChild.add("Tẩy lông");
+//        categoryChild.add("Khủ mùi");
+//        categoryChild.add("Chăm sóc răng miệng");
+//
+//
+//        for (int i = 0; i < categoryChild.size(); i++){
+//            myRef = database.getReference("categorychild");
+//            String catchildID = myRef.push().getKey();
+//            CategoryChild catchild = new CategoryChild(catchildID, categoryChild.get(i), userId);
+//            myRef.child(catchildID).setValue(catchild);
+//        }
         View view = inflater.inflate(R.layout.activity_main, container, false);
-
-
         //atcProductSearch = mView.findViewById(R.id.atc_product_search);
 
+        productFirebase = new ProductFirebase();
 
         toolbar = view.findViewById(R.id.toolbarmanhinh);
         recyclerView = view.findViewById(R.id.rcv_product);
-        resale = view.findViewById(R.id.review);
         gh = view.findViewById(R.id.giohang);
-        xemthem = (Button) view.findViewById(R.id.xemthem);
         tvsreach = view.findViewById(R.id.tvsreach);
 
 
@@ -119,11 +156,6 @@ public class FragmentHome extends Fragment {
 
 
         // searchView = view.findViewById(R.id.search);
-        ssale = new ArrayList<Sale>();
-        sgg = new AdapterSale(getActivity(), ssale);
-        resale.setHasFixedSize(true);
-        resale.setLayoutManager(new GridLayoutManager(getActivity(), 1));
-        resale.setAdapter(sgg);
         ////////////////////////////////////////////////////////////////////
         sp = new ArrayList<Product>();
         adapcay = new AdapterProduct(getActivity(), sp);
@@ -155,7 +187,6 @@ public class FragmentHome extends Fragment {
             objdh = new ArrayList<Bill>();
         }
         getcay();
-        getsale();
         //Quangcao();
         event();
         setDataSlidePhotoAdapter();
@@ -175,12 +206,13 @@ public class FragmentHome extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                adapcay.filter(s.trim());
+//                adapcay.filter(s.trim());
                 return false;
             }
         });
         return true;
     }
+
     // Set Adapter cho viewPagerSlidePhoto
     private void setDataSlidePhotoAdapter() {
 
@@ -197,13 +229,13 @@ public class FragmentHome extends Fragment {
     // Lấy Product để vào slide
     private List<SlidePhoto> getListSlidePhoto() {
 
-        listSlidePhoto.add(new SlidePhoto("https://cdn.thongtinduan.com/uploads/posts/2019-08/uu-nhuoc-diem-va-cach-bo-tri-5-kieu-tieu-canh-duoc-nhieu-gia-chu-chuong-dung-nhat-9.jpg"));
-        listSlidePhoto.add(new SlidePhoto("https://sendalongphung.com/wp-content/uploads/2018/09/0-cay-canh-trong-trong-nha.jpg"));
-        listSlidePhoto.add(new SlidePhoto("https://bancongxanh.com/wp-content/uploads/2019/04/Gi%C3%A1-c%C3%A2y-c%E1%BA%A3nh-v%C4%83n-ph%C3%B2ng-%C4%90%C3%A0-N%E1%BA%B5ng-m%E1%BB%9Bi-nh%E1%BA%A5t-2019.jpg"));
-        listSlidePhoto.add(new SlidePhoto("https://ncppb.com/wp-content/uploads/2019/04/top-10-website-ban-cay-canh.jpg"));
-        listSlidePhoto.add(new SlidePhoto("https://afamilycdn.com/2019/9/5/33-1567649196717622170194-crop-15676492145021350614745.jpg"));
-        listSlidePhoto.add(new SlidePhoto("https://afamilycdn.com/2019/10/2/20190530beginnerplants0007-1570002818813385100229-crop-157000282538490310658.jpg"));
-        listSlidePhoto.add(new SlidePhoto("https://kienviet.net/wp-content/uploads/2019/05/H1-e1559014099672.jpg"));
+        listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/banner-min.jpg?v=1"));
+        listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/revlon-korea.jpg?width=137&height=100&v=17042020"));
+        listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/kose.png?width=137&height=100&v=17042020"));
+        listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/maybeline.png?width=137&height=100&v=17042020"));
+        listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/thuong-hieu-khac.png?width=137&height=100&v=17042020"));
+        listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/banner/logococoon.jpg?width=137&height=100&v=17042020"));
+        listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/vacosi.jpg?width=137&height=100&v=17042020"));
         //  slidePhotoAdapter = new AdaperSlide(listSlidePhoto, this);
         //  viewPagerSlidePhoto.setAdapter(slidePhotoAdapter,this);
         //  adaperSlide.registerDataSetObserver(circleIndicator.getDataSetObserver());
@@ -211,7 +243,6 @@ public class FragmentHome extends Fragment {
 
 
     }
-
 
 
     private void autoSildeImage() {
@@ -256,15 +287,15 @@ public class FragmentHome extends Fragment {
             }
         });
 
-        xemthem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainSale.class);
-
-                startActivity(intent);
-
-            }
-        });
+//        xemthem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), MainSale.class);
+//
+//                startActivity(intent);
+//
+//            }
+//        });
 //        searchView.setOnSearchClickListener(new View.OnClickListener() {
 //            @RequiresApi(api = Build.VERSION_CODES.O)
 //            @Override
@@ -277,7 +308,7 @@ public class FragmentHome extends Fragment {
 
     public void timkiem() {
         tvsreach.setOnClickListener(new View.OnClickListener() {
-               @Override
+            @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MainSearch.class);
                 startActivity(intent);
@@ -311,83 +342,16 @@ public class FragmentHome extends Fragment {
         viewFlipper.setOutAnimation(animation_out);
     }
 
-    private void getsale() {
-        RequestQueue connnect = Volley.newRequestQueue(getActivity());
-        JsonArrayRequest jsonArray = new JsonArrayRequest(Request.Method.GET, urlsale, null, new Response.Listener<JSONArray>() {
+
+    private void getcay(){
+        productFirebase.getAllProduct(new FirebaseCallback() {
             @Override
-            public void onResponse(JSONArray response) {
-
-                for (int i = 0; i < response.length(); i++) {
-
-                    try {
-                        JSONObject jsonsp = response.getJSONObject(i);
-                        int id = jsonsp.getInt("id");
-                        String tensp = jsonsp.getString("tencay");
-                        int gia = jsonsp.getInt("gia");
-                        // int giam = jsonsp.getInt("giamoi");
-                        int sale = jsonsp.getInt("sale");
-                        String igmsp = jsonsp.getString("igmcay");
-                        String mota = jsonsp.getString("mota");
-
-                        ssale.add(new Sale(id, tensp, gia, sale, igmsp, mota));
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-
-                sgg.notifyDataSetChanged();
-            }
-
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
-
-                    }
-                }
-        );
-        connnect.add(jsonArray);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        resale.setLayoutManager(layoutManager);
-    }
-
-    private void getcay() {
-        RequestQueue connnect = Volley.newRequestQueue(getActivity());
-        JsonArrayRequest jsonArray = new JsonArrayRequest(Request.Method.GET, urlcaycanh, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                for (int i = 0; i < response.length(); i++) {
-
-                    try {
-                        JSONObject jsonsp = response.getJSONObject(i);
-                        int id = jsonsp.getInt("id");
-                        String tensp = jsonsp.getString("tensp");
-                        int gia = jsonsp.getInt("giasp");
-                        String igmsp = jsonsp.getString("igmsp");
-                        String mota = jsonsp.getString("mota");
-
-                        sp.add(new Product(id, tensp, gia, igmsp, mota));
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+            public void onCallBack(Object obj) {
+                for (Product product: (ArrayList<Product>)obj){
+                    sp.add(product);
                 }
                 adapcay.notifyDataSetChanged();
-//                Toast.makeText(getContext().getApplicationContext(), "" + ssale.size(), Toast.LENGTH_SHORT).show();
             }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
-                        Log.e( "aaaaaaaaaaaaaaaaa: ",error.toString() );
-                    }
-                }
-        );
-        connnect.add(jsonArray);
-
+        });
     }
 }

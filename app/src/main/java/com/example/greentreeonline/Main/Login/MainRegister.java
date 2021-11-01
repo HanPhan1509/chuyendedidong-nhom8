@@ -23,34 +23,38 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.greentreeonline.Class.User.User;
 import com.example.greentreeonline.ConnectServer.ConnectServer;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
+import com.example.greentreeonline.Firebase.UserFireBase;
 import com.example.greentreeonline.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainRegister extends AppCompatActivity {
-    EditText TK, MK, sdt, diachi, hoten, email , ngay,gt;
+    EditText TK, MK, sdt, diachi, hoten, email, ngay, gt;
     RadioButton radioButton_nam, radioButton_nu;
     TextView bt_register;
-    String str_id,str_tk, str_mk, str_hoten, str_diachi, str_sdt, str_gioitinh, str_email, str_ngay,str_gt;
+    String str_id, str_tk, str_mk, str_hoten, str_diachi, str_sdt, str_gioitinh, str_email, str_ngay, str_gt;
+    UserFireBase userFireBase;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
         setContentView(R.layout.activity_dangky);
-        TK = (EditText) findViewById(R.id.edtaikhoan);
+        userFireBase = new UserFireBase();
         MK = (EditText) findViewById(R.id.password);
         sdt = findViewById(R.id.phone);
-    //    diachi = findViewById(R.id.edt_diachi_register);
+        diachi = findViewById(R.id.diachi);
         hoten = findViewById(R.id.fullName);
-        ngay= findViewById(R.id.date);
-        // gt=findViewById(R.id.aagioitinh);
+        ngay = findViewById(R.id.date);
+        gt=findViewById(R.id.gt);
         email = findViewById(R.id.Email);
-        bt_register =  findViewById(R.id.registerBtn);
+        bt_register = findViewById(R.id.registerBtn);
 //        radioButton_nam.setOnCheckedChangeListener(listenerRadio);
 //        radioButton_nu.setOnCheckedChangeListener(listenerRadio);
         bt_register.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +66,7 @@ public class MainRegister extends AppCompatActivity {
     }
 
     public void Register() {
-        if (TK.getText().toString().equals("")) {
+        if (email.getText().toString().equals("")) {
             Toast.makeText(this, "Enter Username", Toast.LENGTH_SHORT).show();
         } else if (MK.getText().toString().equals("")) {
             Toast.makeText(this, "Enter Password", Toast.LENGTH_SHORT).show();
@@ -71,57 +75,43 @@ public class MainRegister extends AppCompatActivity {
             str_hoten = hoten.getText().toString().trim();
             str_ngay = ngay.getText().toString().trim();
             str_email = email.getText().toString().trim();
-           // str_diachi = diachi.getText().toString().trim();
+            str_diachi = diachi.getText().toString().trim();
             str_sdt = sdt.getText().toString().trim();
-       //     str_gioitinh= gt.getText().toString().trim();
-            str_tk = TK.getText().toString().trim();
+            str_gioitinh= gt.getText().toString().trim();
+            str_diachi = diachi.getText().toString().trim();
             str_mk = MK.getText().toString().trim();
-            StringRequest request = new StringRequest(Request.Method.POST, ConnectServer.dangky, new Response.Listener<String>() {
+            userFireBase.checkExistSDT(str_sdt, new FirebaseCallback() {
                 @Override
-                public void onResponse(String response) {
-                    Log.e( "aaaaaaa: ", response.toString());
-                    if (response.contains("register")) {
-                        Toast.makeText(MainRegister.this, "ok", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), MainLogin.class));
-                    } else if (response.trim().contains("tontai")) {
-                        Toast.makeText(MainRegister.this, "Tên tài khoản đã được sử dụng !", Toast.LENGTH_SHORT).show();
+                public void onCallBack(Object obj) {
+                    if((boolean) obj == false) {
+                        userFireBase.checkExistGmail(str_email, new FirebaseCallback() {
+                            @Override
+                            public void onCallBack(Object obj) {
+                                if ((boolean) obj == false) {
+                                    User user = new User("",str_hoten, str_sdt, str_email, str_diachi, str_gioitinh, str_ngay, str_mk, "");
+                                    userFireBase.addUser(user, new FirebaseCallback() {
+                                        @Override
+                                        public void onCallBack(Object obj) {
+                                            if ((boolean) obj == true){
+                                                Toast.makeText(MainRegister.this, "ok", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(getApplicationContext(), MainLogin.class));
+                                            } else{
+                                                Toast.makeText(MainRegister.this, "Đã có lỗi xảy ra vui lòng thử lại !", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+                                } else  {
+                                    Toast.makeText(MainRegister.this, "Email đã được sử dụng !", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }else {
+                        Toast.makeText(MainRegister.this, "Số điện thoại đã được sử dụng !", Toast.LENGTH_SHORT).show();
                     }
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(MainRegister.this, error.toString(), Toast.LENGTH_SHORT).show();
-                    Log.d("bbbb",error.toString());
-                }
-            }
-            ) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("taikhoan", str_tk);
-                    params.put("matkhau", str_mk);
-                    params.put("hoten", str_hoten);
-                  //  params.put("gioitinh", str_gioitinh);
-                  //  params.put("diachi", str_diachi);
-                    params.put("sdt", str_sdt);
-                    params.put("date", str_ngay);
-                    params.put("gmail", str_email);
-
-                    return params;
-                }
-            };
-            RequestQueue requestQueue = Volley.newRequestQueue(MainRegister.this);
-            requestQueue.add(request);
+            });
         }
-
     }
-    CompoundButton.OnCheckedChangeListener listenerRadio = new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-            if (b) {
-                str_gioitinh = compoundButton.getText().toString().trim();
-            }
-        }
-    };
+
 }
 

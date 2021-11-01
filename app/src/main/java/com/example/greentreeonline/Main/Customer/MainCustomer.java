@@ -12,27 +12,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.greentreeonline.Adapter.AdapterCustomer;
-import com.example.greentreeonline.Class.Customer;
+import com.example.greentreeonline.Class.New.Customer;
 import com.example.greentreeonline.ConnectServer.ConnectServer;
+import com.example.greentreeonline.Firebase.CustomerFirebase;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
 import com.example.greentreeonline.Main.Oder.MainOrder;
 import com.example.greentreeonline.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainCustomer extends AppCompatActivity {
     Button addkh;
@@ -44,6 +32,8 @@ public class MainCustomer extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
+    CustomerFirebase customerFirebase;
+    String idUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +41,11 @@ public class MainCustomer extends AppCompatActivity {
         setContentView(R.layout.activity_khachhang);
         sharedPreferences = MainCustomer.this.getSharedPreferences("luutaikhoan", MainCustomer.this.MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
+        idUser = sharedPreferences.getString("id", "0");
+
+        customerFirebase = new CustomerFirebase();
+
         anhxa();
         event();
         getkhachhang();
@@ -85,61 +80,23 @@ public class MainCustomer extends AppCompatActivity {
         lvkh.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-
                 Intent intent = new Intent(MainCustomer.this, MainOrder.class);
                 intent.putExtra("hoten", kh.get(i).getHoten().toString());
-                intent.putExtra("sdt", "0" + kh.get(i).getSdt() + "");
+                intent.putExtra("sdt",  kh.get(i).getSdt());
                 intent.putExtra("diachi", kh.get(i).getDiachi().toString());
                 startActivity(intent);
-
             }
         });
     }
-
     private void getkhachhang() {
-        RequestQueue connnect = Volley.newRequestQueue(this);
-        StringRequest jsonArray = new StringRequest(Request.Method.POST,urlkh, new Response.Listener<String>() {
+        customerFirebase.getCustomerUserId(idUser, new FirebaseCallback() {
             @Override
-            public void onResponse(String response) {
-                Log.e("onResponse: ", response.toString());
-                try {
-
-                    JSONArray jsonArray = new JSONArray(response);
-                     for (int i = 0; i < response.length(); i++) {
-                         Log.d("erro:", jsonArray.toString());
-                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                         int idtk = jsonObject.getInt("idtk");
-                         int id = jsonObject.getInt("idkh");
-                         String hoten = jsonObject.getString("hoten");
-                         int sdt = jsonObject.getInt("sdt");
-                         String diachi = jsonObject.getString("diachi");
-                         kh.add(new Customer(idtk, id, hoten, sdt, diachi));
-                     }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
+            public void onCallBack(Object obj) {
+                for(Customer customer : (ArrayList<Customer>) obj){
+                    kh.add(customer);
+                }
                 adapkhachhang.notifyDataSetChanged();
             }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainCustomer.this, error.toString(), Toast.LENGTH_SHORT).show();
-                        Log.d("erro:", error.toString());
-
-                    }
-                }
-        )
-        {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> pra = new HashMap<>();
-                int id = sharedPreferences.getInt("id", 0);
-                pra.put("idtk", String.valueOf(id));
-                return pra;
-            }
-        };
-        connnect.add(jsonArray);
+        });
     }
 }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.greentreeonline">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
@@ -16,17 +17,21 @@
 
         <activity android:name=".Admin.doanhthu"></activity>
         <activity android:name=".Main.Sale.MainSale" />
+        <activity android:name=".Main.MainRate" />
         <activity android:name=".sanphamdamua.sanphamdamua" />
         <activity android:name=".Main.Bill.MainStatusBill" />
         <activity android:name=".Admin.themsanpham" />
+        <activity android:name=".Admin.New.themnhanvien" />
         <activity android:name=".Main.Login.MainUpdateProfile" />
         <activity android:name=".Admin.donhangadmin" />
         <activity android:name=".Admin.updatesanpham" />
+        <activity android:name=".Admin.New.updatenhanvien" />
         <activity android:name=".Main.Login.MainRegister" />
         <activity android:name=".Admin.sanpham" />
+        <activity android:name=".Admin.New.nhanvien" />
         <activity android:name=".Main.Bill.MainInfoBill" />
         <activity android:name=".Admin.thongke" />
-        <activity android:name=".Admin.admin" />
+
         <activity android:name=".Main.MainSearch" />
 
         <meta-data
@@ -41,14 +46,15 @@
         <activity android:name=".Main.Oder.MainOrder" />
         <activity android:name=".Main.MainMap" />
         <activity android:name=".Main.Login.MainLogin" />
+        <activity android:name=".Main.Login.MainForgotPassword" />
         <activity android:name=".Main.MainCart" />
         <activity android:name=".Main.Sale.MainInfoSale" />
         <activity android:name=".Main.MainInfoProduct" />
         <activity android:name=".Navigation" />
+        <activity android:name=".Main.MainCategory"/>
         <activity android:name=".Main.MainWait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
