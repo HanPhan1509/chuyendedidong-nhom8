@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">shippedd</string>
+    <string name="login">Đăng Nhập</string>
+    <string name="hintPassword">Password</string>
+    <string name="hintUsername">Username</string>
+    <string name="trahang">Tra Hang</string>
+    <string name="danhan">Da Nhan</string>
+    <string name="danggiao">Dang Giao</string>
+    <string name="text_home">Trang Chủ</string>
+    <string name="text_profile">Hồ sơ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
