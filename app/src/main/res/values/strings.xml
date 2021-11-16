@@ -1,34 +1,13 @@
 <resources>
-    <string name="app_name">SGCOSMESTICS</string>
-    <string name="apikey">AIzaSyAFQVHYJHcfu6AJG77erDMpspVb6SEULQM</string>
-    <string-array name="maps_type">
-        <item name="Thường">MAP_TYPE_NORMAL</item>
-        <item>MAP_TYPE_SATELLITE</item>
-        <item>MAP_TYPE_TERRAIN</item>
-        <item>MAP_TYPE_HYBRID</item>
-
-    </string-array>
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
-    <string name="facebook_app_id">[APP_ID]</string>
-
-    <string name="fb_login_protocol_scheme">fb[APP_ID]</string>
-    <string name="plant_detail_image_content_description" translation_description="Content description for the header / hero image that is show at the top of the plant detail screen.">Image of plant</string>
-    <string name="watering_needs_prefix" translation_description="Prefix for the text describing how often a plant should be watered. Used in combination with watering_needs_suffix.">Watering needs</string>
-    <string name="menu_item_share_plant" translation_description="The label for the Share menu item">Share</string>
-    <string name="a11y_plant_item_image" translation_description="Accessibility text for each of the plant images shown in the 'My garden' and 'Plant list' screens.">Picture of plant</string>
-
-
+    <string name="app_name">shippedd</string>
+    <string name="login">Đăng Nhập</string>
+    <string name="hintPassword">Password</string>
+    <string name="hintUsername">Username</string>
+    <string name="trahang">Tra Hang</string>
+    <string name="danhan">Da Nhan</string>
+    <string name="danggiao">Dang Giao</string>
+    <string name="text_home">Trang Chủ</string>
+    <string name="text_profile">Hồ sơ</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="home_fragment">Home Fragment</string>
-    <string name="sport_fragment">Sport Fragment</string>
-    <string name="movie_fragment">Movie Fragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

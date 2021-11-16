@@ -1,62 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.greentreeonline">
+    package="com.example.shippedd">
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Quản lí đơn"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.GreenTreeOnline">
-
-
-        <activity android:name=".Admin.doanhthu"></activity>
-        <activity android:name=".Main.Sale.MainSale" />
-        <activity android:name=".Main.MainRate" />
-        <activity android:name=".sanphamdamua.sanphamdamua" />
-        <activity android:name=".Main.Bill.MainStatusBill" />
-        <activity android:name=".Admin.themsanpham" />
-        <activity android:name=".Admin.New.themnhanvien" />
-        <activity android:name=".Main.Login.MainUpdateProfile" />
-        <activity android:name=".Admin.donhangadmin" />
-        <activity android:name=".Admin.updatesanpham" />
-        <activity android:name=".Admin.New.updatenhanvien" />
-        <activity android:name=".Main.Login.MainRegister" />
-        <activity android:name=".Admin.sanpham" />
-        <activity android:name=".Admin.New.nhanvien" />
-        <activity android:name=".Main.Bill.MainInfoBill" />
-        <activity android:name=".Admin.thongke" />
-
-        <activity android:name=".Main.MainSearch" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/apikey" />
-
-        <activity android:name=".Main.Oder.MainSwitch" />
-        <activity android:name=".Main.Login.MainSetting" />
-        <activity android:name=".Main.Customer.MainAddCustomer" />
-        <activity android:name=".Main.Customer.MainCustomer" />
-        <activity android:name=".Main.Bill.MainBill" />
-        <activity android:name=".Main.Oder.MainOrder" />
-        <activity android:name=".Main.MainMap" />
-        <activity android:name=".Main.Login.MainLogin" />
-        <activity android:name=".Main.Login.MainForgotPassword" />
-        <activity android:name=".Main.MainCart" />
-        <activity android:name=".Main.Sale.MainInfoSale" />
-        <activity android:name=".Main.MainInfoProduct" />
-        <activity android:name=".Navigation" />
-        <activity android:name=".Main.MainCategory"/>
-        <activity android:name=".Main.MainWait">
+        android:theme="@style/Theme.Shippedd">
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Run"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".Home" />
+        <activity android:name=".Info" />
+        <activity
+            android:name=".Oderhome"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

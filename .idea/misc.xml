@@ -3,172 +3,69 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/back.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/back2.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/background_white.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/bg_form.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/bg_toolbar.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/bg_wait.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/buton2.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/button.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/custom_edit_text_search.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/customcolor.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/custtom_edit_text_code.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/donhang.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/giohang.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/hoadon.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_account_circle_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_baseline_search_24.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_baseline_settings_ethernet_24.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_baseline_shopping_basket_24.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_call_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_cholayhang.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_choxacnhan.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_content_copy_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_content_cut_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_danggiao.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_danhgia.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_detail_back.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_local_florist_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_location_on_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_more_vert_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_photo_library.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_shopping_cart_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/ic_spa_black_24dp.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/nen.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/nen2.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/nen3.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/sale.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/xacnhan.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable-v24/yeuthichred.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_admin.xml" value="0.264" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_category.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_chitiethoadon.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_chitietsanpham.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_dangky.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_dangnhap.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_dashboard.xml" value="0.264" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_detailcat.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_doanhthu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_donhangadmin.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_dungcu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_giamgia.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_giohang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_information.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_khachhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_map.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_nhanvien.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_quenmatkhau.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_rate.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_sanpham.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_sanphamdamua.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_setting.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_sreach.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_statusbill.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_thanhtoan.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_thanhtoannew.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_themnhanvien.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_themsanpham.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_thongke2.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_thongtin.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_thongtinkhachhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_tinhtrangdonhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_updatesanpham.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_updatetaikhoan.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_vanchuyen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_wait.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/activity_yeuthich.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/chitietsale.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/hoadon.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/ic_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_cartshop.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_cat.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_donhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_nhanvien.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_orderinfo.xml" value="0.4" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_product.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_rate.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_slide_photo.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/item_spiner.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemdonhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemgiohang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemkhachhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemlike.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemsale.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemsanpham.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemthanhtoan.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemthongkethang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemtrangthai.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/itemvanchuyen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/layout/navi.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/menu/menu_plant_detail.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/menu/menu_trangthai.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/menu/sreach.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOMESTICS/SG COMESTICS/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26615384615384613" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/activity_category.xml" value="0.264" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/activity_thanhtoan.xml" value="0.264" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/activity_thongtin.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/activity_wait.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/item_donhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/item_product.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/itemdonhang.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/itemsanpham.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/itemthanhtoan.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/itemtrangthai.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/SGCOSMESTICS/SG COSMESTICS/app/src/main/res/layout/itemvanchuyen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/drawable/my_border.xml" value="0.14375" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_admin.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_category.xml" value="0.152" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_chitiethoadon.xml" value="0.13949275362318841" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_chitietsanpham.xml" value="0.2" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_dangky.xml" value="0.264" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_dangnhap.xml" value="0.1296875" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_dashboard.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_detailcat.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_dungcu.xml" value="0.13949275362318841" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_giohang.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_information.xml" value="0.223731884057971" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_khachhang.xml" value="0.2368659420289855" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_nhanvien.xml" value="0.223731884057971" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_quenmatkhau.xml" value="0.1296875" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_rate.xml" value="0.223731884057971" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_sanpham.xml" value="0.13949275362318841" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_sanphamdamua.xml" value="0.2" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_sreach.xml" value="0.1358695652173913" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_statusbill.xml" value="0.12364130434782608" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_thanhtoan.xml" value="0.264" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_thanhtoannew.xml" value="0.23278985507246377" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_themnhanvien.xml" value="0.223731884057971" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_themsanpham.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_thongke2.xml" value="0.1358695652173913" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_thongtinkhachhang.xml" value="0.2" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_tinhtrangdonhang.xml" value="0.176" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_updatetaikhoan.xml" value="0.223731884057971" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/activity_yeuthich.xml" value="0.264" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/hoadon.xml" value="0.176" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_cartshop.xml" value="0.14166666666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_cat.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_donhang.xml" value="0.14166666666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_nhanvien.xml" value="0.223731884057971" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_orderinfo.xml" value="0.6" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_product.xml" value="0.136" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_rate.xml" value="0.223731884057971" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/item_spiner.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/itemgiohang.xml" value="0.12760416666666666" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/itemlike.xml" value="0.24456521739130435" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/itemsanpham.xml" value="0.264" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/itemtrangthai.xml" value="0.264" />
-        <entry key="..\:/Users/trung/Downloads/GreenTree/GreenTree/app/src/main/res/layout/navi.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/drawable/custom_button.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/activity_dash_board.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/activity_main.xml" value="0.12364130434782608" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhang.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_danggiao.xml" value="0.12364130434782608" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_danhan.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_trahang.xml" value="0.16304347826086957" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_xacnhan.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/home.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/info_shipper.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_choxacnhan.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_danggiao.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_danhan.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/itemtrahang.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/run.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/shippedd/app/src/main/res/layout/trahang.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/activity_main.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/chitiet.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhang.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhangcangiao.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhangdanggiao.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhangdanhan.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_danggiao.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_danhan.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_trahang.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/home.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/info_shipper.xml" value="0.2" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_danggiao.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_danhan.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/itemtrahang.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/login.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/KHOI-VO/AndroidStudioProjects/shippedd/app/src/main/res/layout/oder.xml" value="0.13360507246376813" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/drawable/ic_baseline_face_24.xml" value="0.225" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/activity_main.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/chitiet.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhang.xml" value="0.2554347826086957" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhangcangiao.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhangdanggiao.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/donhangdanhan.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_danggiao.xml" value="0.2554347826086957" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_danhan.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_trahang.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/fragment_frag_xacnhan.xml" value="0.2477355072463768" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/home.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/info_shipper.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_choxacnhan.xml" value="0.2477355072463768" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_danggiao.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/item_danhan.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/itemtrahang.xml" value="0.2677083333333333" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/login.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/oder.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/profile.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/tools_info.xml" value="0.22509057971014493" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/layout/trahang.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/shippedd/app/src/main/res/menu/menu_bottom.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/truon/Downloads/shippedd/app/src/main/res/layout/fragment_frag_xacnhan.xml" value="0.21965579710144928" />
+        <entry key="..\:/Users/truon/Downloads/shippedd/app/src/main/res/layout/item_choxacnhan.xml" value="0.264" />
+        <entry key="..\:/Users/truon/OneDrive/Máy tính/shippedd/app/src/main/res/layout/info_shipper.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
