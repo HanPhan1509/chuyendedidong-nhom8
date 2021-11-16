@@ -61,12 +61,12 @@ public class adapsanphamad extends RecyclerView.Adapter<adapsanphamad.ViewHolder
         final Product sp = listsp.get(position);
         holder.tvTen.setText(sp.getTensp());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.tvGia.setText("Giá: " + decimalFormat.format(sp.getGt()) + " VNĐ");
+        holder.tvGia.setText("Giá: " + decimalFormat.format(sp.getGia()) + " VNĐ");
         Picasso.get().load(sp.getImgsp()).centerCrop().resize(150, 150).into(holder.imvHinh);
         holder.xoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                xoa(sp.getTensp(),sp.getIdsp());
+//                xoa(sp.getTensp(),sp.getIdsp());
 
             }
         });

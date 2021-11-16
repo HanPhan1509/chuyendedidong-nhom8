@@ -1,5 +1,6 @@
 package com.example.greentreeonline.Admin;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -7,16 +8,15 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.greentreeonline.Main.Bill.MainStatusBill;
+import com.example.greentreeonline.Main.MainMap;
+import com.example.greentreeonline.Shipper.quanliShipper;
 import com.example.greentreeonline.Main.Login.MainLogin;
 import com.example.greentreeonline.Main.Login.MainUpdateProfile;
-import com.example.greentreeonline.Main.MainMap;
 import com.example.greentreeonline.Navigation;
 import com.example.greentreeonline.R;
 
@@ -24,9 +24,9 @@ import org.simple.eventbus.EventBus;
 
 public class admin extends Fragment {
 
-    TextView tk, sp,hd;
+    TextView tk, sp,hd, shiper;
     public static TextView hoten1, gioitinh, date, mail, sdt1, dc, cho;
-    private TextView btndangxuat, dcs, btndangnhap, update,xemlsdh,like;
+    private TextView btndangxuat, dcs, btndangnhap, update,xemlsdh,like, nhanvien;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
@@ -39,6 +39,7 @@ public class admin extends Fragment {
         tk = view.findViewById(R.id.thongke);
         sp = view.findViewById(R.id.adsanpham);
         hd= view.findViewById(R.id.hoadon);
+        nhanvien = view.findViewById(R.id.nhanvien);
         hoten1 = view.findViewById(R.id.hotennguoidung);
 //        gioitinh = view.findViewById(R.id.gioitinh);
 //        date = view.findViewById(R.id.ngaysinh);
@@ -52,6 +53,7 @@ public class admin extends Fragment {
         xemlsdh = view.findViewById(R.id.btndonhang);
         like = view.findViewById(R.id.txtlike);
         cho = view.findViewById(R.id.tinh);
+        shiper = view.findViewById(R.id.shiper);
 
         sharedPreferences = getContext().getSharedPreferences("luutaikhoan", getContext().MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -60,6 +62,21 @@ public class admin extends Fragment {
         editor1 = sharedPreferences1.edit();
         click();
 
+        nhanvien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), com.example.greentreeonline.Admin.New.nhanvien.class);
+                startActivity(intent);
+            }
+        });
+
+        shiper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), com.example.greentreeonline.Admin.Shiper.class);
+                startActivity(intent);
+            }
+        });
 
 CheckData();
         diachishop();
@@ -88,7 +105,7 @@ CheckData();
         hd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainStatusBill.class);
+                Intent intent = new Intent(getActivity(), donhangadmin.class);
                 startActivity(intent);
             }
         });

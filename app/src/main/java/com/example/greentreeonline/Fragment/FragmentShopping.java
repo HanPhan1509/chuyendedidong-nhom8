@@ -119,7 +119,7 @@ public class FragmentShopping extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -142,7 +142,7 @@ public class FragmentShopping extends Fragment {
                         String igmsp = jsonsp.getString("img");
                         String mota = jsonsp.getString("mota");
 
-                        objdd.add(new Product(id, tensp, gia, igmsp, mota));
+//                        objdd.add(new Product(id, tensp, gia, igmsp, mota));
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -154,7 +154,7 @@ public class FragmentShopping extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
 
                     }
                 }

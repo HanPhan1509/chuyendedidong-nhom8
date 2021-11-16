@@ -53,6 +53,7 @@ public class FragmentProfile extends Fragment {
     public static TextView hoten1, gioitinh, date, mail, sdt1, dc, cho;
     private int i;
     ImageView tt;
+    ImageView choxacnhan, imageView3, danggiao, danhgia;
     RecyclerView recyclerView;
  //   Button btn, set, dh, dn;
     ArrayList<Favourite> yeut;
@@ -82,7 +83,6 @@ public class FragmentProfile extends Fragment {
         dcs = view.findViewById(R.id.dcshop);
         update= view.findViewById(R.id.updatetk);
         recyclerView = view.findViewById(R.id.review1);
-        xemlsdh = view.findViewById(R.id.btndonhang);
         like = view.findViewById(R.id.txtlike);
         cho = view.findViewById(R.id.tinh);
        // set = view.findViewById(R.id.setting);
@@ -91,6 +91,38 @@ public class FragmentProfile extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1));
         recyclerView.setAdapter(adapcay);
+
+        choxacnhan = view.findViewById(R.id.choxacnhan);
+        imageView3 = view.findViewById(R.id.imageView3);
+        danggiao = view.findViewById(R.id.danggiao);
+        danhgia = view.findViewById(R.id.danhgia);
+
+        update = view.findViewById(R.id.updatetk);
+
+        choxacnhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                makeIntentBill(-1);
+            }
+        });
+        imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                makeIntentBill(1);
+            }
+        });
+        danggiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                makeIntentBill(2);
+            }
+        });
+        danhgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                makeIntentBill(3);
+            }
+        });
 
 
         sharedPreferences = getContext().getSharedPreferences("luutaikhoan", getContext().MODE_PRIVATE);
@@ -102,7 +134,7 @@ public class FragmentProfile extends Fragment {
         CheckData();
         onclick();
       //  check();
-        getcay();
+//        getcay();
 
         diachishop();
         checkdangnhap();
@@ -128,6 +160,12 @@ public class FragmentProfile extends Fragment {
         });
     }
 
+    public void makeIntentBill(int status){
+        Intent intent = new Intent(getContext(), MainBill.class);
+        intent.putExtra("status", status+"");
+        startActivity(intent);
+    }
+
     public void checkdangnhap() {
         String TenTk = sharedPreferences.getString("taikhoan", "");
         if (!TextUtils.isEmpty(TenTk)) {
@@ -135,11 +173,8 @@ public class FragmentProfile extends Fragment {
             btndangnhap.setVisibility(View.INVISIBLE);
         } else {
             Toast.makeText(getContext(), "Bạn cần đăng nhập", Toast.LENGTH_SHORT).show();
-            //  startActivity(new Intent(getActivity(),dangnhap.class));
             btndangxuat.setVisibility(View.INVISIBLE);
             btndangnhap.setVisibility(View.VISIBLE);
-
-            // finish();
         }
     }
         public void dangnhap() {
@@ -164,7 +199,6 @@ public class FragmentProfile extends Fragment {
                     EventBus.getDefault().post(true, "loginSuccess");
                     Intent intent = new Intent(getContext(), Navigation.class);
                     startActivity(intent);
-
                     Toast.makeText(getContext(), "Bạn Đã Đăng Xuất! ", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -178,14 +212,6 @@ public class FragmentProfile extends Fragment {
     }
 
     public void onclick() {
-
-        xemlsdh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainBill.class);
-                startActivity(intent);
-            }
-        });
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,7 +244,7 @@ public class FragmentProfile extends Fragment {
                         String igmsp = jsonsp.getString("igmsp");
                         String mota = jsonsp.getString("mota");
 
-                        sp.add(new Product(id, tensp, gia, igmsp, mota));
+//                        sp.add(new Product(id, tensp, gia, igmsp, mota));
 
                     } catch (JSONException e) {
                         e.printStackTrace();

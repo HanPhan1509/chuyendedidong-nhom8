@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -25,50 +24,48 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.example.greentreeonline.Class.New.Cart;
+import com.example.greentreeonline.Class.New.Favourite;
+import com.example.greentreeonline.Class.New.Product;
+import com.example.greentreeonline.Firebase.CartFirebase;
+import com.example.greentreeonline.Firebase.FavouriteFirebase;
+import com.example.greentreeonline.Firebase.FirebaseCallback;
 import com.example.greentreeonline.R;
 import com.example.greentreeonline.Class.Sale;
-import com.example.greentreeonline.Class.Cart;
-import com.example.greentreeonline.ConnectServer.ConnectServer;
 import com.example.greentreeonline.Main.Login.MainLogin;
-import com.example.greentreeonline.Class.Product;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.example.greentreeonline.Fragment.FragmentHome.listgh;
 
 
 public class MainInfoProduct extends AppCompatActivity {
     Product sp;
     Sale sl;
-    ImageView imgcayct, yt;
-    Cart gh;
-    TextView ctcay, ctgia, ctmota;
+    ImageView imgcayct, yt, likered;
+    TextView ctcay, ctgia, ctmota, thuonghieu, xuatxu;
     Toolbar toolbar;
     Integer[] soluong;
     EditText edgiatri;
     Button tang, giam, mg;
     FloatingActionButton call;
-    String urlyt = ConnectServer.addyeuthich;
     ImageButton addgh;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+
+    String urlImage = "https://firebasestorage.googleapis.com/v0/b/greentreeonline-9eb47.appspot.com/o/";
+    String duoiimg = "?alt=media";
+
+    String idUser;
+
+    FavouriteFirebase favouriteFirebase;
+    CartFirebase cartFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chitietsanpham);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
@@ -93,34 +90,46 @@ public class MainInfoProduct extends AppCompatActivity {
         call = findViewById(R.id.call);
         mg = findViewById(R.id.muangay);
         addgh = (ImageButton) findViewById(R.id.addgiohang);
+        likered = findViewById(R.id.likered);
+        thuonghieu = findViewById(R.id.thuonghieu);
+        xuatxu = findViewById(R.id.xuatxu);
+
         sharedPreferences = this.getSharedPreferences("luutaikhoan", this.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
+        idUser = sharedPreferences.getString("id", "0");
+
+
+        favouriteFirebase = new FavouriteFirebase();
+
+        cartFirebase = new CartFirebase();
+
         yt = findViewById(R.id.like);
-//                    if (thongtin.acc.size() == 0) {
-//                        Intent intent = new Intent(giohang.this, dangnhap.class);
-//                        startActivity(intent);
-//                    } else {
-//                        Intent intent = new Intent(giohang.this, thanhtoan.class);
-//                        startActivity(intent);
-//                    }
-//                } else {
-//                    Toast.makeText(giohang.this, "Bạn chưa nhập sản phẩm nào cho giỏ hàng!", Toast.LENGTH_SHORT).show();
-//                    return;
         yt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String TenTk = sharedPreferences.getString("taikhoan", "");
-                if (!TextUtils.isEmpty(TenTk)) {
+                if (!TextUtils.isEmpty(idUser)) {
                     yeuthich();
                 } else {
                     Toast.makeText(MainInfoProduct.this, "Bạn cần đăng nhập", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MainLogin.class));
-
                     finish();
-
-
                 }
+            }
+        });
+        likered.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bothich();
+            }
+        });
+
+        mg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainInfoProduct.this, MainRate.class);
+                intent.putExtra("idsp", sp.getIdsp());
+                startActivity(intent);
             }
         });
 
@@ -146,18 +155,6 @@ public class MainInfoProduct extends AppCompatActivity {
                             //    Activity#requestPermissions
                         } else {
                             startActivity(intent);
-
-//                if (trangchu.sp.size() > 0) {
-//                    if (thongtin.acc.size() == 0) {
-//                        Intent intent = new Intent(chitietsanpham.this, dangnhap.class);
-//                        startActivity(intent);
-//                    } else {
-//                        Intent intent = new Intent(chitietsanpham.this, thanhtoan.class);
-//                        startActivity(intent);
-//                    }
-//
-//                }
-
                         }
                     }
                 });
@@ -181,59 +178,49 @@ public class MainInfoProduct extends AppCompatActivity {
     }
 
     public void yeuthich() {
-        yt.setVisibility(View.INVISIBLE);
-        RequestQueue queue = Volley.newRequestQueue(MainInfoProduct.this);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, urlyt, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d("load ", response.toString());
-                if (response != null) {
-                    //for (int i = 0; i < vc.; i++) {
-                    // String tensp = vc.get(i).getTensp();
-                    Toast.makeText(MainInfoProduct.this, "Đã thêm vào danh sách yêu thích!", Toast.LENGTH_SHORT).show();
-                    // startActivity(new Intent(chitietsanpham.this, giohang.class));
-                    // }
-                } else {
-                    Toast.makeText(MainInfoProduct.this, "Lỗi thêm ", Toast.LENGTH_SHORT).show();
-                }
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainInfoProduct.this, error.toString(), Toast.LENGTH_SHORT).show();
+        if(likered.getVisibility() == View.INVISIBLE) {
+            System.out.println("yêu thích");
+            yt.setVisibility(View.INVISIBLE);
+            likered.setVisibility(View.VISIBLE);
+            Favourite favourite = new Favourite(idUser, sp.getIdsp(), sp.getTensp(), sp.getGia(), sp.getImgsp());
+            favouriteFirebase.addFavourite(favourite, new FirebaseCallback() {
+                @Override
+                public void onCallBack(Object obj) {
+                    if ((boolean) obj == true) {
+                        System.out.println("thêm vào sản phẩm yêu thích thành công");
                     }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> pra = new HashMap<>();
-                int id = sharedPreferences.getInt("id", 0);
-                pra.put("idtk", String.valueOf(id));
-                pra.put("idyt", String.valueOf(sp.getIdsp()));
-                pra.put("tensp", ctcay.getText().toString().trim());
-                pra.put("gia", String.valueOf(sp.getGt()));
-                pra.put("mota", ctmota.getText().toString().trim());
-                pra.put("img", sp.getImgsp());
-                return pra;
-            }
-        };
-
-        queue.add(stringRequest);
-
-
+                }
+            });
+        }
     }
 
-    ;
+    public void bothich(){
+        if(yt.getVisibility() == View.INVISIBLE) {
+            System.out.println("bo thích");
+            yt.setVisibility(View.VISIBLE);
+            likered.setVisibility(View.INVISIBLE);
+            favouriteFirebase.deleteFavourite(idUser, sp.getIdsp(), new FirebaseCallback() {
+                @Override
+                public void onCallBack(Object obj) {
+                    if ((boolean) obj == true) {
+                        System.out.println("bỏ thích sản phẩm thành công");
+                    }
+                }
+            });
+        }
+    }
 
 
     public void getDataChiTiet() {
         Intent intent = getIntent();
         sp = (Product) intent.getSerializableExtra("trangchu");
-        Picasso.get().load(sp.getImgsp()).into(imgcayct);
+        Picasso.get().load(urlImage + sp.getImgsp() + duoiimg).into(imgcayct);
         ctcay.setText(sp.getTensp());
         DecimalFormat decimalformat = new DecimalFormat("###,###,###");
-        ctgia.setText(decimalformat.format(sp.getGt()) + " VNĐ");
+        ctgia.setText(decimalformat.format(sp.getGia()) + " VNĐ");
         ctmota.setText(sp.getMota());
+        thuonghieu.setText(sp.getThuonghieu());
+        xuatxu.setText(sp.getXuatxu());
     }
 
     public void soluong() {
@@ -282,33 +269,16 @@ public class MainInfoProduct extends AppCompatActivity {
         addgh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //   if (listgh.size()>0) {
-                boolean exist = false;
-                for (int i = 0; i < listgh.size(); i++) {
-                    if (listgh.get(i).getIdgh() == sp.getIdsp()) {
-                        int soLuong = Integer.parseInt(edgiatri.getText().toString().trim());
-                        int sl = soLuong + listgh.get(i).getSl();
-                        if (sl > 100) {
-                            listgh.get(i).setSl(100);
-                        } else {
-                            listgh.get(i).setSl(sl);
+                int soLuong = Integer.parseInt(edgiatri.getText().toString().trim());
+                Cart cart = new Cart(idUser, sp.getIdsp(), sp.getTensp(), sp.getImgsp(), sp.getGia(),soLuong, sp.getIduser());
+                cartFirebase.addCart(cart, new FirebaseCallback() {
+                    @Override
+                    public void onCallBack(Object obj) {
+                        if((boolean) obj == true){
+                            startActivity(new Intent(MainInfoProduct.this, MainCart.class));
                         }
-                        exist = true;
                     }
-                }
-                if (listgh.size() > 0) {
-                    int soLuong = Integer.parseInt(edgiatri.getText().toString().trim());
-                    Cart gioHang = new Cart(sp.getIdsp(), sp.getTensp(), sp.getImgsp(), sp.getGt(), soLuong);
-                    listgh.add(gioHang);
-
-
-                } else {
-                    int soLuong = Integer.parseInt(edgiatri.getText().toString().trim());
-                    Cart gioHang = new Cart(sp.getIdsp(), sp.getTensp(), sp.getImgsp(), sp.getGt(), soLuong);
-                    listgh.add(gioHang);
-                }
-                startActivity(new Intent(MainInfoProduct.this, MainCart.class));
-                //  }
+                });
             }
         });
     }

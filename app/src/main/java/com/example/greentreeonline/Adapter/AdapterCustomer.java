@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.greentreeonline.Class.Customer;
+import com.example.greentreeonline.Class.New.Customer;
 import com.example.greentreeonline.Class.Switch;
 import com.example.greentreeonline.Main.Oder.MainSwitch;
 import com.example.greentreeonline.R;
@@ -65,8 +65,7 @@ public class AdapterCustomer extends BaseAdapter {
             Customer kh = listkh.get(position);
 
             holder.tvTen.setText(kh.getHoten());
-            DecimalFormat decimalFormat = new DecimalFormat("#########");
-            holder.tvsdt.setText("+84" + decimalFormat.format(kh.getSdt()));
+            holder.tvsdt.setText("+84" + kh.getSdt());
             holder.tvdiachi.setText(kh.getDiachi());
 
             convertView.setTag(holder);

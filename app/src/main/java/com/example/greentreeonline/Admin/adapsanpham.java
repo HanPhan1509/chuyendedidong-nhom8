@@ -46,7 +46,7 @@ public class adapsanpham extends BaseAdapter {
 
     }
 
-    private class ViewHolder {
+    public class ViewHolder {
         public ImageView imvHinh;
         public TextView tvTen, tvGia;
         public Button xoa, sua;
@@ -69,12 +69,12 @@ public class adapsanpham extends BaseAdapter {
 
             holder.tvTen.setText(kh.getTensp());
             //DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-            holder.tvGia.setText((kh.getGt() + ""));
+            holder.tvGia.setText((kh.getGia() + ""));
             Picasso.get().load(kh.getImgsp()).centerCrop().resize(150, 150).into(holder.imvHinh);
             holder.xoa.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    xoa(kh.getTensp(), kh.getIdsp());
+//                    xoa(kh.getTensp(), kh.getIdsp());
 
                 }
             });
@@ -94,7 +94,7 @@ public class adapsanpham extends BaseAdapter {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                context.xoasanpham(id);
+//                context.xoasanpham(id);
                 context.getcay();
             }
         });

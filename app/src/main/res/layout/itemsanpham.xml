@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="176dp"
-            android:layout_height="57dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -27,6 +28,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Tên sản phẩm"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textColor="#000000"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -42,9 +45,26 @@
                 android:textColor="#FF0000"
                 android:textSize="15dp"
                 android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:theme="@style/Theme.AppCompat">
+                <Switch
+                    android:id="@+id/switch_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái:"
+                    android:textColor="@color/black"
+                    android:checked="true"
+                    android:textOff="OFF"
+                    android:switchPadding="10dp"
+                    android:textOn="ON"/>
+            </LinearLayout>
 
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

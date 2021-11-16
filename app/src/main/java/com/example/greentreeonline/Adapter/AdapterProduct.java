@@ -32,7 +32,6 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
 //        this.sreachhome.addAll(listhome);
     }
 
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -46,7 +45,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.ViewHold
         Product sp = listhome.get(position);
         holder.tvTen.setText(sp.getTensp());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.tvGia.setText("Giá: " + decimalFormat.format(sp.getGt()) + " VNĐ");
+        holder.tvGia.setText("Giá: " + decimalFormat.format(sp.getGia()) + " VNĐ");
          Picasso.get().load(sp.getImgsp()).centerCrop().resize(150, 150).into(holder.imvHinh);
         Log.d(sp.getImgsp(), "  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: ");
 
