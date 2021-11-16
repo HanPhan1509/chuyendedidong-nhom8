@@ -21,16 +21,15 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_alignParentTop="true"
             android:gravity="center"
-            android:textStyle="bold"
+            android:text="(2)"
             android:textColor="#000000"
             android:textSize="20dp"
-            android:text="(2)"
-            >
+            android:textStyle="bold">
 
         </TextView>
     </androidx.appcompat.widget.Toolbar>
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lvGioHang"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"

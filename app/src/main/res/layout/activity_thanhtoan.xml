@@ -116,7 +116,7 @@
                                 android:layout_width="114dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="Chử Văn Viên "
+                                android:text="Đỗ Khánh Nguyên "
                                 android:textColor="#000000"
                                 android:textStyle="bold">
 
@@ -126,7 +126,7 @@
                                 android:id="@+id/ttsdt"
                                 android:layout_width="234dp"
                                 android:layout_height="wrap_content"
-                                android:text="(+84)979951954"
+                                android:text="0378829212"
                                 android:textColor="#000000"></TextView>
 
 
@@ -146,7 +146,7 @@
                             android:layout_width="348dp"
                             android:layout_height="34dp"
                             android:layout_marginLeft="20dp"
-                            android:text="Số 30, Xóm Chùa Dộc, Thôn Đại, Phụng Công, Văn Giang, Hưng Yên"
+                            android:text="538-17 Ung Văn Khiêm, P25, Q.Bình Thạnh, TP.HCM"
                             android:textColor="#000000"></TextView>
 
                     </LinearLayout>
@@ -432,7 +432,7 @@
                 android:id="@+id/bthoadon"
                 android:layout_width="129dp"
                 android:layout_height="match_parent"
-                android:text="Thanh Toán"
+                android:text="Đặt Hàng"
                 android:textSize="12dp"
                 android:textColor="#FFFFFF"
                 app:backgroundTint="#00BCD4"></Button>

@@ -1,33 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.greentreeonline">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.GreenTreeOnline">
-
-
-        <activity android:name=".Admin.doanhthu"></activity>
+        android:theme="@style/Theme.GreenTreeOnline"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Shiper.ShiperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Shiper.Shiper"
+            android:exported="false" />
+        <activity android:name=".Admin.doanhthu" />
         <activity android:name=".Main.Sale.MainSale" />
+        <activity android:name=".Main.MainRate" />
         <activity android:name=".sanphamdamua.sanphamdamua" />
         <activity android:name=".Main.Bill.MainStatusBill" />
         <activity android:name=".Admin.themsanpham" />
+        <activity android:name=".Admin.New.themnhanvien" />
         <activity android:name=".Main.Login.MainUpdateProfile" />
         <activity android:name=".Admin.donhangadmin" />
         <activity android:name=".Admin.updatesanpham" />
+        <activity android:name=".Admin.New.updatenhanvien" />
         <activity android:name=".Main.Login.MainRegister" />
         <activity android:name=".Admin.sanpham" />
+        <activity android:name=".Admin.New.nhanvien" />
         <activity android:name=".Main.Bill.MainInfoBill" />
         <activity android:name=".Admin.thongke" />
-        <activity android:name=".Admin.admin" />
         <activity android:name=".Main.MainSearch" />
+        <activity android:name=".Admin.Shiper" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -41,10 +52,12 @@
         <activity android:name=".Main.Oder.MainOrder" />
         <activity android:name=".Main.MainMap" />
         <activity android:name=".Main.Login.MainLogin" />
+        <activity android:name=".Main.Login.MainForgotPassword" />
         <activity android:name=".Main.MainCart" />
         <activity android:name=".Main.Sale.MainInfoSale" />
         <activity android:name=".Main.MainInfoProduct" />
         <activity android:name=".Navigation" />
+        <activity android:name=".Main.MainCategory" />
         <activity android:name=".Main.MainWait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,4 +66,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

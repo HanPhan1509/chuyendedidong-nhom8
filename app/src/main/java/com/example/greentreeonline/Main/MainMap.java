@@ -86,11 +86,11 @@ public class MainMap extends FragmentActivity implements OnMapReadyCallback {
         map = googleMap;
 //        map.setMyLocationEnabled(true);
         map.setOnMyLocationChangeListener(myLocationChangeListener);
-           LatLng nhavien = new LatLng(20.9532636,105.9259427);
+        LatLng nhavien = new LatLng(10.80984779989315,106.71264636807376); //10.80984779989315, 106.71264636807376
 //        LatLng ute1 = new LatLng(20.8590086, 105.9996825);
 //        LatLng ute2 = new LatLng(20.9450817, 106.0391655);
 //        LatLng ute3 = new LatLng(20.9364662, 106.31045);
-         map.addMarker(new MarkerOptions().position(nhavien).title("Nhà của viên "));
+        map.addMarker(new MarkerOptions().position(nhavien).title("SHOP SGSOSMESTICS "));
 //        map.addMarker(new MarkerOptions().position(ute1).title("cs1"));
 //        map.addMarker(new MarkerOptions().position(ute2).title("Cs2"));
 //        map.addMarker(new MarkerOptions().position(ute3).title("Cs3"));

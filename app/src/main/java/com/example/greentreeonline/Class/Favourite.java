@@ -1,5 +1,8 @@
 package com.example.greentreeonline.Class;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class Favourite {
     int idtk;
     int idsp;

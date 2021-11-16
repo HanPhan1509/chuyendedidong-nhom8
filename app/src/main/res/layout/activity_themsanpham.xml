@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:orientation="vertical">
 
@@ -9,18 +10,31 @@
         android:id="@+id/tooladd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:title="Thêm Sản Phẩm">
+        android:title="Thêm sản phẩm"
+        >
 
     </Toolbar>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="491dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
+        <ImageView
+            android:id="@+id/img_upload"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/anhnen3"
+            />
+        <Button
+            android:id="@+id/btn_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Image"
+            android:textColor="@color/white"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/id"
@@ -34,6 +48,47 @@
                 android:layout_gravity="center"
                 android:hint="Tên sản phẩm"
                 android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Spinner
+            android:id="@+id/spiner_cat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Spinner
+            android:id="@+id/spiner_catchild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/thuonghieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:hint="Thương hiệu"
+                android:inputType="text"
+                android:textColor="#000000" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/xuatxu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:hint="Xuất xứ sản phẩm"
+                android:inputType="text"
+                android:textColor="#000000" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,27 +109,9 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/addlink"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_gravity="center"
-                android:hint="Link hình ảnh"
-                android:inputType="text"
-                android:textColor="#000000" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
             <EditText
                 android:id="@+id/addmota"
                 android:layout_width="match_parent"

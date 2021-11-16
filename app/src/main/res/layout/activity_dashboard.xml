@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,10 +13,10 @@
         android:background="@drawable/bg_toolbar"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"></androidx.appcompat.widget.Toolbar>
 
 
-    </androidx.appcompat.widget.Toolbar>
+    -
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,10 +27,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+        -
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+
+            -
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -75,21 +81,25 @@
                     app:layout_constraintStart_toEndOf="@+id/hotennguoidung"
                     app:layout_constraintTop_toTopOf="@+id/textView"
                     app:layout_constraintVertical_bias="0.727"
-                    app:srcCompat="@drawable/vienbbb" />
+                    app:srcCompat="@drawable/ic_account_circle_black_24dp"
+                    tools:ignore="VectorDrawableCompat" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            -
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-
                 android:background="#FFFFFF"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:background="@drawable/yeuthich" />
 
                 <TextView
@@ -110,7 +120,11 @@
                     android:gravity="right"
                     android:text="Sản phẩm đã thích >"
                     android:textColor="#000000" />
+
             </LinearLayout>
+
+
+            -
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -118,41 +132,6 @@
                 android:layout_marginTop="2dp"
                 android:orientation="vertical">
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#FFFFFF"
-                    android:orientation="horizontal"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/ic_donhang">
-
-                    </ImageView>
-
-                    <TextView
-                        android:layout_width="58dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:text="Đơn Mua"
-                        android:textColor="#1e4368"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/btndonhang"
-                        android:layout_width="wrap_content"
-                        android:layout_height="24dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="Xem lịch sử mua hàng >"
-                        android:textColor="#000000" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -165,6 +144,8 @@
                     android:paddingRight="5dp">
 
 
+                    -
+
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -172,6 +153,9 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="0.25"
                         android:orientation="vertical">
+
+
+                        -
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -191,8 +175,10 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0"
                                 app:srcCompat="@drawable/ic_choxacnhan"
                                 tools:ignore="VectorDrawableCompat" />
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -205,7 +191,11 @@
                             android:textColor="#1e4368"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
+
+
+                    -
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -214,6 +204,9 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="0.25"
                         android:orientation="vertical">
+
+
+                        -
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -235,6 +228,7 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/ic_cholayhang"
                                 tools:ignore="VectorDrawableCompat" />
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -247,7 +241,11 @@
                             android:textColor="#1e4368"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
+
+
+                    -
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -256,6 +254,9 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="0.25"
                         android:orientation="vertical">
+
+
+                        -
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -277,6 +278,7 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/ic_danggiao"
                                 tools:ignore="VectorDrawableCompat" />
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -288,7 +290,11 @@
                             android:textColor="#1e4368"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
+
+
+                    -
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -297,6 +303,9 @@
                         android:layout_marginRight="8dp"
                         android:layout_weight="0.25"
                         android:orientation="vertical">
+
+
+                        -
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -318,6 +327,7 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/ic_danhgia"
                                 tools:ignore="VectorDrawableCompat" />
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <TextView
@@ -325,14 +335,19 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:gravity="center"
-                            android:text="Đánh giá"
+                            android:text="Đã giao"
                             android:textColor="#1e4368"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
+
+
+            -
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -353,8 +368,10 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-
             </LinearLayout>
+
+
+            -
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -366,9 +383,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/review1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
             </LinearLayout>
 
@@ -377,54 +392,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
                 android:layout_marginTop="10dp"
+                android:background="#59B2DA"
+                android:textStyle="bold"
                 android:gravity="center"
-                android:background="#FFFFFF"
-                android:text="Cập nhật thông tin">
-
-            </TextView>
+                android:textColor="@color/white"
+                android:text="Cập nhật thông tin"></TextView>
 
             <TextView
                 android:id="@+id/dcshop"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
                 android:layout_marginTop="5dp"
+                android:background="#59B2DA"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:gravity="center"
-                android:background="#FFFFFF"
-                android:text="Địa chỉ Shop">
+                android:text="Địa chỉ Shop"></TextView>
 
-            </TextView>
+
+            -
+
             <FrameLayout
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/btndangxuat"
                     android:layout_width="match_parent"
                     android:layout_height="29dp"
-
                     android:layout_marginTop="5dp"
-                    android:gravity="center"
-
                     android:background="#FFFFFF"
+                    android:gravity="center"
                     android:text="Đăng Xuất"
                     android:textColor="#F44336"
-                    android:textStyle="bold">
-
-                </TextView>
+                    android:textStyle="bold"></TextView>
 
                 <TextView
                     android:id="@+id/btndangnhap"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:gravity="center"
                     android:layout_marginTop="5dp"
-
                     android:background="#FFFFFF"
+                    android:gravity="center"
                     android:text="Đăng Nhập"
                     android:textColor="#F44336"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold" />
+
             </FrameLayout>
+
         </LinearLayout>
+
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
