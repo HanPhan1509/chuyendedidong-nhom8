@@ -1,5 +1,7 @@
 package com.example.greentreeonline.Main;
 
+import static com.google.android.gms.maps.GoogleMap.MAP_TYPE_TERRAIN;
+
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
@@ -66,7 +68,7 @@ public class MainMap extends FragmentActivity implements OnMapReadyCallback {
                         type = GoogleMap.MAP_TYPE_SATELLITE;
                         break;
                     case 2:
-                        type = GoogleMap.MAP_TYPE_TERRAIN;
+                        type = MAP_TYPE_TERRAIN;
                         break;
                     case 3:
                         type = GoogleMap.MAP_TYPE_HYBRID;

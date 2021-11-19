@@ -148,7 +148,7 @@ public class MainInfoProduct extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         Intent intent = new Intent(Intent.ACTION_CALL);
-                        intent.setData(Uri.parse("tel:0979951954"));
+                        intent.setData(Uri.parse("tel:0378829212"));
                         if (ActivityCompat.checkSelfPermission(MainInfoProduct.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                             reques();
                             // TODO: Consider calling

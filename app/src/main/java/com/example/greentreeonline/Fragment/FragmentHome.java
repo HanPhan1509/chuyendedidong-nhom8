@@ -227,6 +227,7 @@ public class FragmentHome<mDatabase> extends Fragment {
     }
 
     // Lấy Product để vào slide
+    //Thêm thông báo
     private List<SlidePhoto> getListSlidePhoto() {
 
         listSlidePhoto.add(new SlidePhoto("https://adminbeauty.hvnet.vn/Upload/Files/banner-min.jpg?v=1"));
