@@ -24,26 +24,38 @@ public class
 frag_xacnhan extends Fragment {
 
     ArrayList<Bill> xacnhan = new ArrayList<>();
+    ListView lvDonHangCho;
+    ArrayList<Bill> list = new ArrayList<>();
+    CustomAdapterChoXacNhan customAdapterChoXacNhan;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_frag_xacnhan, container, false);
 
-        ListView lvDonHangCho = view.findViewById(R.id.lvDonHangCho);
-        ArrayList<Bill> list = new ArrayList<>();
-        CustomAdapterChoXacNhan customAdapterChoXacNhan =
+        lvDonHangCho = view.findViewById(R.id.lvDonHangCho);
+
+        customAdapterChoXacNhan =
                 new CustomAdapterChoXacNhan(getContext(), R.layout.item_choxacnhan, list);
         lvDonHangCho.setAdapter(customAdapterChoXacNhan);
 
 
+        return view;
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         // vào firebase lấy dữ lieu:
+        list.clear();
+        customAdapterChoXacNhan.notifyDataSetChanged();
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("bill");
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Bill bill = snapshot.getValue(Bill.class);
-                if (bill.getStatus() == 0) {
+                if (bill.getStatus() == 4) {
                     list.add(bill);
                     customAdapterChoXacNhan.notifyDataSetChanged();
                 }
@@ -53,22 +65,19 @@ frag_xacnhan extends Fragment {
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 for (int i = 0; i < list.size(); i++) {
                     if (list.get(i).getId().equals(snapshot.getKey())) {
-                        list.remove(i);
-
+                        Bill bill = snapshot.getValue(Bill.class);
+                        if (bill.getStatus() == 4) {
+                            list.add(bill);
+                            customAdapterChoXacNhan.notifyDataSetChanged();
+                            break;
+                        } else {
+                            list.remove(i);
+                            customAdapterChoXacNhan.notifyDataSetChanged();
+                            break;
+                        }
                     }
                 }
-                removeindex();
             }
-            public void removeindex() {
-                for (int j = 0; j < xacnhan.size(); j++) {
-                    if (xacnhan.get(j).getStatus() != 0) {
-                        xacnhan.remove(j);
-
-                    }
-                }
-                customAdapterChoXacNhan.notifyDataSetChanged();
-            }
-
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
@@ -87,8 +96,5 @@ frag_xacnhan extends Fragment {
         });
 
 
-        return view;
-
     }
-
 }

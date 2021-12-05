@@ -54,7 +54,7 @@ public class CustomAdapterTraHang extends ArrayAdapter
         sodienthoai3.setText("Số điện thoại: " + bill.getDt());
         diachi3.setText("Địa chỉ: " + bill.getDiachi());
         phuongthuctt3.setText("Phương thức thanh toán: Thanh toán khi nhận hàng");
-        tongsanpham3.setText("6 sản phẩm");
+
         tongtien3.setText(bill.getTongtien() + "");
         txthienthi1.setText("Giao hàng thất bại");
 

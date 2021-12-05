@@ -17,6 +17,7 @@ public class Home extends AppCompatActivity {
     private Button btninfo;
     private Button btnOder;
     private Button btnLogout;
+    private Button btnchange;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class Home extends AppCompatActivity {
         btninfo = findViewById(R.id.btninfo);
         btnOder = findViewById(R.id.btnoder);
         btnLogout = findViewById(R.id.btnlogout);
+        btnchange  = findViewById(R.id.changepass);
         
         btninfo.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -58,7 +58,7 @@ public class CustomAdapterChoXacNhan extends ArrayAdapter {
         sodienthoai.setText("Số điện thoại: " + bill.getDt());
         diachi.setText("Địa chỉ: " + bill.getDiachi());
         phuongthuctt.setText("Phương thức thanh toán: Thanh toán khi nhận hàng");
-        tongsanpham.setText("6 sản phẩm");
+
         tongtien.setText(bill.getTongtien() + "");
 
 

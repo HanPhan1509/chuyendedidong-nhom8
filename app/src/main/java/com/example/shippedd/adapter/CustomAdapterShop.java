@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,12 +15,12 @@ import com.example.shippedd.R;
 
 import java.util.ArrayList;
 
-public class CustomAdapterDaNhan extends ArrayAdapter {
+public class CustomAdapterShop extends ArrayAdapter {
     Context context;
     int resource;
     ArrayList<Bill> data;
 
-    public CustomAdapterDaNhan(Context context, int resource, ArrayList<Bill> data) {
+    public CustomAdapterShop(Context context, int resource, ArrayList<Bill> data) {
         super(context, resource, data);
         this.context = context;
         this.data = data;
@@ -53,11 +52,9 @@ public class CustomAdapterDaNhan extends ArrayAdapter {
         sodienthoai2.setText("Số điện thoại: " + bill.getDt());
         diachi2.setText("Địa chỉ: " + bill.getDiachi());
         phuongthuctt2.setText("Phương thức thanh toán: Thanh toán khi nhận hàng");
+
         tongtien2.setText(bill.getTongtien() + "");
-
-
-        txthienthi.setText("Giao hàng thành công");
-
+        txthienthi.setText("Có đơn hàng");
 
         return convertView;
     }

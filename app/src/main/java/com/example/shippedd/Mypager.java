@@ -18,15 +18,16 @@ public class Mypager extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position)
-        {
+        switch (position) {
             case 0:
-                return new frag_xacnhan();
+                return new frag_xacnhan_shop();
             case 1:
-                return new frag_danggiao();
+                return new frag_xacnhan();
             case 2:
-                return new frag_danhan();
+                return new frag_danggiao();
             case 3:
+                return new frag_danhan();
+            case 4:
                 return new frag_trahang();
 
         }
@@ -35,6 +36,6 @@ public class Mypager extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 5;
     }
 }

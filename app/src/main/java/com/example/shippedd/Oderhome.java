@@ -18,12 +18,13 @@ public class Oderhome extends AppCompatActivity {
     private TabLayout mtablayout;
     private ViewPager2 mviewpager;
     private Mypager mypager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.donhang);
 
 
@@ -32,19 +33,21 @@ public class Oderhome extends AppCompatActivity {
         mypager = new Mypager(this);
         mviewpager.setAdapter(mypager);
         new TabLayoutMediator(mtablayout, mviewpager, (tab, position) -> {
-            switch (position)
-            {
+            switch (position) {
                 case 0:
-                    tab.setText("Chờ xác nhân");
+                    tab.setText("Shop");
                     break;
                 case 1:
-                    tab.setText("Đang giao");
+                    tab.setText("Chờ xác nhân");
                     break;
                 case 2:
-                    tab.setText("Đã nhận");
+                    tab.setText("Đang giao");
                     break;
                 case 3:
-                    tab.setText("Trã hảng");
+                    tab.setText("Đã nhận");
+                    break;
+                case 4:
+                    tab.setText("Đã hủy");
                     break;
 
             }

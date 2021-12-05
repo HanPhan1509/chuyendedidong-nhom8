@@ -57,7 +57,7 @@ public class CustomAdapterDangGiao extends ArrayAdapter {
         sodienthoai1.setText("Số điện thoại: " + bill.getDt());
         diachi1.setText("Địa chỉ: " + bill.getDiachi());
         phuongthuctt1.setText("Phương thức thanh toán: Thanh toán khi nhận hàng");
-        tongsanpham1.setText("6 sản phẩm");
+
         tongtien1.setText(bill.getTongtien() + "");
         btnhuy.setOnClickListener(new View.OnClickListener() {
             @Override
